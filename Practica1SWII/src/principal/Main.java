@@ -66,7 +66,8 @@ public class Main {
             }
         }*/
     Controlador controlador = new Controlador();
-    controlador.crearReceta();
+    controlador.crearObjeto("prueba1.xml");
+    //controlador.crearReceta();
     }
     
 }

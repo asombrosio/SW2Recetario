@@ -45,7 +45,7 @@ protected void crearXML(String nombreFichero, Receta receta){
             Logger.getLogger(Marsalling.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-public Receta crearObjeto(String nombreFichero){
+protected Receta crearObjeto(String nombreFichero){
     Receta receta= new Receta();
        try {  
    

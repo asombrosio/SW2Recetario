@@ -15,7 +15,16 @@ import java.util.ArrayList;
 public class Controlador {
     Marsalling mrs = new Marsalling();
     public void crearXML(String nombreFichero, Receta receta){
-       mrs.crearXML(nombreFichero, receta);
+       mrs.crearXML(nombreFichero, receta);  
+    }
+    
+    public void crearObjeto(String nombreFichero){
+        
+        Receta receta = mrs.crearObjeto(nombreFichero);
+        System.err.println("Este es el nombre de la receta elegida :" + receta.getNombre());
+        System.err.println("Estos son los ingredientes: " + receta.getIngredienete().get(1));
+        System.err.println("El precio de la receta es :" + receta.getPrecio());
+        
     }
     public void crearReceta(){
     Receta receta = new Receta();
