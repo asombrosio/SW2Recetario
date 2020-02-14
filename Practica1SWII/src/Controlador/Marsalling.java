@@ -26,9 +26,11 @@ public class Marsalling {
 
 protected void crearXML(String nombreFichero, Receta receta){
         FileWriter fichero = null;
-
+        File file = new File("./files/" + nombreFichero);
+           comprobarFichero(file);
         try {
             fichero = new FileWriter("./files/" + nombreFichero);
+            
 
             try {
                 JAXBContext context = JAXBContext.newInstance(Receta.class);
@@ -63,7 +65,13 @@ protected Receta crearObjeto(String nombreFichero){
       }  
        return receta;
     }  
-    
+   private void comprobarFichero(File fichero){
+     if (!fichero.exists()) {
+    } else {
+        fichero.delete();
+        System.out.println("El archivo fue sobrescrito.");
+    }
+} 
 
 }
         
