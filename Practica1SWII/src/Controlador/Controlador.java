@@ -6,6 +6,7 @@
 package Controlador;
 
 import Recetarios.Receta;
+import java.util.ArrayList;
 
 /**
  *
@@ -16,5 +17,18 @@ public class Controlador {
     public void crearXML(String nombreFichero, Receta receta){
        mrs.crearXML(nombreFichero, receta);
     }
+    public void crearReceta(){
+    Receta receta = new Receta();
+    receta.setNombre("Canelones");
+        ArrayList<String> ingredientes = new ArrayList<String>();
+        ingredientes.add("Pasta");
+        ingredientes.add("Bechamel");
+        ingredientes.add("Carne");
+        ingredientes.add("tomate frito");
+    receta.setIngredienete(ingredientes);
+    receta.setPrecio(15.56);
+        crearXML("prueba1.xml", receta);
+    }
+    
     
 }

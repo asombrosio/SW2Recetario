@@ -5,6 +5,7 @@
  */
 package principal;
 
+import Controlador.Controlador;
 import java.util.Scanner;
 
 
@@ -21,7 +22,7 @@ public class Main {
     
     public static void main(String[] args) {
         // TODO code application logic here
-    Scanner scanner = new Scanner(System.in);
+    /*Scanner scanner = new Scanner(System.in);
     Integer opcion = -1;
     Integer salir = 0;
         
@@ -63,7 +64,9 @@ public class Main {
                     System.err.println("Error, introduzca un numero del cero al 10");
                     break;
             }
-        }
+        }*/
+    Controlador controlador = new Controlador();
+    controlador.crearReceta();
     }
     
 }
