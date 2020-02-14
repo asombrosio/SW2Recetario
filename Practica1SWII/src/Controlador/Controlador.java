@@ -16,6 +16,7 @@ import java.util.Scanner;
  */
 public class Controlador {
     Marsalling mrs = new Marsalling();
+    ValidarXSD vXSD = new ValidarXSD();
     private void crearXML(String nombreFichero, Receta receta){
        mrs.crearXML(nombreFichero, receta);  
     }
@@ -62,7 +63,7 @@ public class Controlador {
                     // Validacion DTD de la agenda
                     break;
                 case 6:
-                    // Validacion contra XSD Agenda
+                    System.out.println("file.xml es valido con file.xsd? "+ vXSD.validarXSD("./files/file.xsd", "./files/file.xml"));
                     break;
                 case 7:
                     // Escribir sentencia Xpath y ejecutarla
