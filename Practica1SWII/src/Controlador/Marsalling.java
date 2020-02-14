@@ -22,16 +22,15 @@ import javax.xml.bind.Unmarshaller;
  * @author david
  */
 public class Marsalling {
-Receta receta= new Receta();
 
-public void crearXML(String nombreFichero){
+
+protected void crearXML(String nombreFichero, Receta receta){
         FileWriter fichero = null;
 
         try {
             fichero = new FileWriter("./files/" + nombreFichero);
 
             try {
-                // TODO code application logic here
                 JAXBContext context = JAXBContext.newInstance(Receta.class);
                 Marshaller m = context.createMarshaller();
                 m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
@@ -46,5 +45,25 @@ public void crearXML(String nombreFichero){
             Logger.getLogger(Marsalling.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+public Receta crearObjeto(String nombreFichero){
+    Receta receta= new Receta();
+       try {  
+   
+        File file = new File("./files/" + nombreFichero);  
+        JAXBContext jaxbContext = JAXBContext.newInstance(Receta.class);  
+   
+        Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();  
+        receta = (Receta) jaxbUnmarshaller.unmarshal(file);  
+          
+        
+        
+   
+      } catch (JAXBException e) {  
+        e.printStackTrace();  
+      }  
+       return receta;
+    }  
+    
+
 }
         
