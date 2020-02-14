@@ -39,5 +39,5 @@ public class Controlador {
         crearXML("prueba1.xml", receta);
     }
     
-    
+      
 }
