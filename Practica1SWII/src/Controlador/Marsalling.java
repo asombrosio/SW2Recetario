@@ -6,6 +6,7 @@
 package Controlador;
 
 import Recetarios.Receta;
+import Recetarios.Recetario;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -24,19 +25,19 @@ import javax.xml.bind.Unmarshaller;
 public class Marsalling {
 
 
-protected void crearXML(String nombreFichero, Receta receta){
+protected void crearXML(String nombreFichero, Recetario recetario){
         FileWriter fichero = null;
-        File file = new File("./files/" + nombreFichero);
+        File file = new File("./files/xml/" + nombreFichero);
            comprobarFichero(file);
         try {
-            fichero = new FileWriter("./files/" + nombreFichero);
+            fichero = new FileWriter("./files/xml/" + nombreFichero);
             
 
             try {
-                JAXBContext context = JAXBContext.newInstance(Receta.class);
+                JAXBContext context = JAXBContext.newInstance(Recetario.class);
                 Marshaller m = context.createMarshaller();
                 m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-                m.marshal(receta, fichero);
+                m.marshal(recetario, fichero);
 
             } catch (PropertyException ex) {
                 Logger.getLogger(Marsalling.class.getName()).log(Level.SEVERE, null, ex);
@@ -51,8 +52,8 @@ protected Receta crearObjeto(String nombreFichero){
     Receta receta= new Receta();
        try {  
    
-        File file = new File("./files/" + nombreFichero);  
-        JAXBContext jaxbContext = JAXBContext.newInstance(Receta.class);  
+        File file = new File("./files/xml/" + nombreFichero);  
+        JAXBContext jaxbContext = JAXBContext.newInstance(Object.class);  
    
         Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();  
         receta = (Receta) jaxbUnmarshaller.unmarshal(file);  

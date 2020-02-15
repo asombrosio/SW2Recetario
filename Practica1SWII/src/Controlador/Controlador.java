@@ -6,6 +6,7 @@
 package Controlador;
 
 import Recetarios.Receta;
+import Recetarios.Recetario;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -17,7 +18,8 @@ import java.util.Scanner;
 public class Controlador {
     Marsalling mrs = new Marsalling();
     ValidarXSD vXSD = new ValidarXSD();
-    private void crearXML(String nombreFichero, Receta receta){
+    Modelo modelo = new Modelo();
+    private void crearXML(String nombreFichero, Recetario receta){
        mrs.crearXML(nombreFichero, receta);  
     }
     
@@ -45,13 +47,14 @@ public class Controlador {
                     System.err.println("Introduce el nombre del fichero sin la extensión");
                     respuesta = scanner.nextLine();
                     Receta receta= crearObjeto(respuesta+".xml");
-                    listarReceta(receta);
+                    modelo.listarReceta(receta);
                     break;
                 case 2:
                      //Exportar agenda
                     System.err.println("Introduce el nombre del fichero sin la extensión");
                      respuesta = scanner.nextLine();
-                     crearXML(respuesta+ ".xml", crearReceta());
+                     //crearXML(respuesta+ ".xml", crearReceta());
+                     crearXML(respuesta+ ".xml", modelo.crearRecetario());
                     break;
                 case 3:
                     // Exportar Persona agenda
@@ -63,7 +66,7 @@ public class Controlador {
                     // Validacion DTD de la agenda
                     break;
                 case 6:
-                    System.out.println("file.xml es valido con file.xsd? "+ vXSD.validarXSD("./files/file.xsd", "./files/file.xml"));
+                    System.out.println("file.xml es valido con file.xsd? "+ vXSD.validarXSD("./files/xml/file.xsd", "./files/xml/file.xml"));
                     break;
                 case 7:
                     // Escribir sentencia Xpath y ejecutarla
@@ -83,28 +86,6 @@ public class Controlador {
             }
         }
     }
-    
-    private Receta crearReceta(){
-    Receta receta = new Receta();
-    receta.setNombre("Canelones");
-        ArrayList<String> ingredientes = new ArrayList<String>();
-        ingredientes.add("Pasta");
-        ingredientes.add("Bechamel");
-        ingredientes.add("Carne");
-        ingredientes.add("tomate frito");
-    receta.setIngredienete(ingredientes);
-    receta.setPrecio(15.56);
-        return receta;
-    }
-    private void listarReceta(Receta receta){
-        System.err.println("Este es el nombre de la receta elegida :" + receta.getNombre());
-        System.err.println("Estos son los ingredientes:");
-        for(String elemeto:receta.getIngredienete()){
-             System.err.println( elemeto);
-        }
-        System.err.println("El precio de la receta es :" + receta.getPrecio());
-    }
-    
-    
+   
       
 }
