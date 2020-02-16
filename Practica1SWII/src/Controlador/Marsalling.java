@@ -25,35 +25,40 @@ import javax.xml.bind.Unmarshaller;
 public class Marsalling {
 
 
-protected void crearXML(String nombreFichero, Recetario recetario){
-        FileWriter fichero = null;
-        File file = new File("./files/xml/" + nombreFichero);
-           comprobarFichero(file);
+protected void crearXMLReceta(String nombreFichero, Receta receta) {
         try {
-            fichero = new FileWriter("./files/xml/" + nombreFichero);
-            
-
+            FileWriter fichero = null;
+            File file = new File("./files/xml/" + nombreFichero);
+            comprobarFichero(file);
             try {
-                JAXBContext context = JAXBContext.newInstance(Recetario.class);
-                Marshaller m = context.createMarshaller();
-                m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-                m.marshal(recetario, fichero);
-
-            } catch (PropertyException ex) {
-                Logger.getLogger(Marsalling.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (JAXBException ex) {
+                fichero = new FileWriter("./files/xml/" + nombreFichero);
+                
+                
+                try {
+                    JAXBContext context = JAXBContext.newInstance(Receta.class);
+                    Marshaller m = context.createMarshaller();
+                    m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+                    m.marshal(receta, fichero);
+                    
+                } catch (PropertyException ex) {
+                    Logger.getLogger(Marsalling.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (JAXBException ex) {
+                    Logger.getLogger(Marsalling.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            } catch (IOException ex) {
                 Logger.getLogger(Marsalling.class.getName()).log(Level.SEVERE, null, ex);
             }
+            fichero.close();
         } catch (IOException ex) {
             Logger.getLogger(Marsalling.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-protected Receta crearObjeto(String nombreFichero){
+protected Receta crearObjetoReceta(String nombreFichero){
     Receta receta= new Receta();
        try {  
    
         File file = new File("./files/xml/" + nombreFichero);  
-        JAXBContext jaxbContext = JAXBContext.newInstance(Object.class);  
+        JAXBContext jaxbContext = JAXBContext.newInstance(Receta.class);  
    
         Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();  
         receta = (Receta) jaxbUnmarshaller.unmarshal(file);  
@@ -65,6 +70,52 @@ protected Receta crearObjeto(String nombreFichero){
         e.printStackTrace();  
       }  
        return receta;
+    }  
+protected void crearXMLRecetario(String nombreFichero, Recetario recetario) {
+        try {
+            FileWriter fichero = null;
+            File file = new File("./files/xml/" + nombreFichero);
+            comprobarFichero(file);
+            try {
+                fichero = new FileWriter("./files/xml/" + nombreFichero);
+                
+                
+                try {
+                    JAXBContext context = JAXBContext.newInstance(Recetario.class);
+                    Marshaller m = context.createMarshaller();
+                    m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+                    m.marshal(recetario, fichero);
+                    
+                } catch (PropertyException ex) {
+                    Logger.getLogger(Marsalling.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (JAXBException ex) {
+                    Logger.getLogger(Marsalling.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            } catch (IOException ex) {
+                Logger.getLogger(Marsalling.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            fichero.close();
+        } catch (IOException ex) {
+            Logger.getLogger(Marsalling.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+protected Recetario crearObjetoRecetario(String nombreFichero){
+    Recetario recetario= new Recetario();
+       try {  
+   
+        File file = new File("./files/xml/" + nombreFichero);  
+        JAXBContext jaxbContext = JAXBContext.newInstance(Receta.class);  
+   
+        Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();  
+        recetario = (Recetario) jaxbUnmarshaller.unmarshal(file);  
+          
+        
+        
+   
+      } catch (JAXBException e) {  
+        e.printStackTrace();  
+      }  
+       return recetario;
     }  
    private void comprobarFichero(File fichero){
      if (!fichero.exists()) {

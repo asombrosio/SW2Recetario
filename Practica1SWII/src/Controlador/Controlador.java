@@ -19,15 +19,23 @@ public class Controlador {
     Marsalling mrs = new Marsalling();
     ValidarXSD vXSD = new ValidarXSD();
     Modelo modelo = new Modelo();
-    private void crearXML(String nombreFichero, Recetario receta){
-       mrs.crearXML(nombreFichero, receta);  
+    private void crearXMLRecetario(String nombreFichero, Recetario recetario){
+       mrs.crearXMLRecetario(nombreFichero, recetario);  
     }
-    
+     private void crearXMLReceta(String nombreReceta, String nombreFichero){
+            mrs.crearXMLReceta(nombreFichero,modelo.buscarReceta(nombreReceta,crearRecetario()));
+       
+    }
     private Receta crearObjeto(String nombreFichero){
         
-        Receta receta = mrs.crearObjeto(nombreFichero);
+        Receta receta = mrs.crearObjetoReceta(nombreFichero);
         return receta;
     }
+    private Recetario crearRecetario (){
+    return modelo.crearRecetario();
+    
+    }
+    
     
     public void Menu(){
         Scanner scanner = new Scanner(System.in);
@@ -44,23 +52,29 @@ public class Controlador {
                     break;
                 case 1:
                      // Importar agenda
-                    System.err.println("Introduce el nombre del fichero sin la extensión");
-                    respuesta = scanner.nextLine();
-                    Receta receta= crearObjeto(respuesta+".xml");
-                    modelo.listarReceta(receta);
+                    
                     break;
                 case 2:
                      //Exportar agenda
                     System.err.println("Introduce el nombre del fichero sin la extensión");
                      respuesta = scanner.nextLine();
-                     //crearXML(respuesta+ ".xml", crearReceta());
-                     crearXML(respuesta+ ".xml", modelo.crearRecetario());
+                     crearXMLRecetario(respuesta+ ".xml", modelo.crearRecetario());
                     break;
                 case 3:
+                     System.err.println("En esta opcion creará el nombre del xml de la receta.");
+                     System.err.println("Introduce el nombre de la receta a exportar");
+                     respuesta = scanner.nextLine();      
+                     crearXMLReceta(respuesta,respuesta+".xml");
+                             
+                    // crearXMLReceta(respuesta+ ".xml",);
                     // Exportar Persona agenda
                     break;
                 case 4:
                     // Importar Persona agenda
+                    System.err.println("Introduce el nombre del fichero sin la extensión");
+                    respuesta = scanner.nextLine();
+                    Receta receta= crearObjeto(respuesta+".xml");
+                    modelo.listarReceta(receta);
                     break;
                 case 5:
                     // Validacion DTD de la agenda

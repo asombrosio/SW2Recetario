@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Receta>
+    <nombre>cacatua</nombre>
+    <ingredienete>
+        <ingredienete>pera</ingredienete>
+        <ingredienete>manzana</ingredienete>
+        <ingredienete>Carne</ingredienete>
+        <ingredienete>tomate</ingredienete>
+    </ingredienete>
+    <precio>25.56</precio>
+</Receta>
