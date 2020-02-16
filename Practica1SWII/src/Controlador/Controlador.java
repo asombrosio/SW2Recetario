@@ -19,15 +19,14 @@ public class Controlador {
     Marsalling mrs = new Marsalling();
     ValidarXSD vXSD = new ValidarXSD();
     Modelo modelo = new Modelo();
+    
     private void crearXMLRecetario(String nombreFichero, Recetario recetario){
        mrs.crearXMLRecetario(nombreFichero, recetario);  
     }
      private void crearXMLReceta(String nombreReceta, String nombreFichero){
-            mrs.crearXMLReceta(nombreFichero,modelo.buscarReceta(nombreReceta,crearRecetario()));
-       
+            mrs.crearXMLReceta(nombreFichero,modelo.buscarReceta(nombreReceta,crearRecetario())); 
     }
-    private Receta crearObjeto(String nombreFichero){
-        
+    private Receta crearObjeto(String nombreFichero){  
         Receta receta = mrs.crearObjetoReceta(nombreFichero);
         return receta;
     }
