@@ -6,6 +6,7 @@
 package Controlador;
 
 import javax.swing.JFrame;
+import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JPanel;
 
@@ -14,7 +15,16 @@ import javax.swing.JPanel;
  * @author darth
  */
 public class Vista extends JFrame{
-    private JPanel contentPane;
+    //Creamos la barra de Menu
+      JMenuBar barraMenu = new JMenuBar();
+ 
+   //Creamos los menus
+      JMenu recetario = new JMenu("Recetario");
+      JMenu receta = new JMenu("Receta");
+      
+      //Añadimos los menus a la barra de menu
+      //barraMenu.add(recetario);
+      //barraMenu.add(receta);
     
     
 }
