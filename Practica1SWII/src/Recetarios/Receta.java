@@ -22,8 +22,7 @@ import javax.xml.bind.annotation.XmlTransient;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "Receta")
 public class Receta implements Serializable {
-    @XmlTransient
-    private Integer codigo;
+  
     @XmlElement
    private String nombre;
    @XmlElementWrapper 
@@ -33,19 +32,9 @@ public class Receta implements Serializable {
     
     public Receta (){}
 
-    /**
-     * @return the codigo
-     */
-    public Integer getCodigo() {
-        return codigo;
-    }
 
-    /**
-     * @param codigo the codigo to set
-     */
-    public void setCodigo(Integer codigo) {
-        this.codigo = codigo;
-    }
+   
+
 
     /**
      * @return the nombre
