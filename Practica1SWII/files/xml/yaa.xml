@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Recetario>
+    <nombre>libro1</nombre>
+    <recetas>
+        <recetas codigoRecetario="libro1">
+            <nombre>Canelones</nombre>
+            <ingredienete>
+                <ingredienete>Pasta</ingredienete>
+                <ingredienete>Bechamel</ingredienete>
+                <ingredienete>Carne</ingredienete>
+                <ingredienete>tomate frito</ingredienete>
+            </ingredienete>
+            <precio>15.56</precio>
+        </recetas>
+        <recetas codigoRecetario="libro1">
+            <nombre>cacatua</nombre>
+            <ingredienete>
+                <ingredienete>pera</ingredienete>
+                <ingredienete>manzana</ingredienete>
+                <ingredienete>Carne</ingredienete>
+                <ingredienete>tomate</ingredienete>
+            </ingredienete>
+            <precio>25.56</precio>
+        </recetas>
+        <recetas>
+            <nombre>apoteke</nombre>
+            <ingredienete>
+                <ingredienete>vendas</ingredienete>
+                <ingredienete>medicamentos</ingredienete>
+                <ingredienete>0</ingredienete>
+            </ingredienete>
+            <precio>0.0</precio>
+        </recetas>
+    </recetas>
+    <precio>100.0</precio>
+</Recetario>
