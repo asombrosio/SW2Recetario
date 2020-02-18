@@ -110,7 +110,7 @@ protected Recetario crearObjetoRecetario(String nombreFichero){
        try {  
    
         File file = new File("./files/xml/" + nombreFichero);  
-        JAXBContext jaxbContext = JAXBContext.newInstance(Receta.class);  
+        JAXBContext jaxbContext = JAXBContext.newInstance(Recetario.class);  
    
         Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();  
         recetario = (Recetario) jaxbUnmarshaller.unmarshal(file);  

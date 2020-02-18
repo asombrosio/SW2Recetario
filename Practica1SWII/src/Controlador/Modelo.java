@@ -15,9 +15,10 @@ import java.util.ArrayList;
  */
 public class Modelo {
    
-    protected Receta crearReceta(){
+    protected Receta crearReceta(String nombreRecetario){
     Receta receta = new Receta();
     receta.setNombre("Canelones");
+     receta.setCodigoRecetario(nombreRecetario);//sele adjunta como referencia de su recetario el mismonobre de este
         ArrayList<String> ingredientes = new ArrayList<String>();
         ingredientes.add("Pasta");
         ingredientes.add("Bechamel");
@@ -27,9 +28,10 @@ public class Modelo {
     receta.setPrecio(15.56);
         return receta;
     }  
-    protected Receta crearReceta2(){
+    protected Receta crearReceta2(String nombreRecetario){
     Receta receta = new Receta();
     receta.setNombre("cacatua");
+    receta.setCodigoRecetario(nombreRecetario);
         ArrayList<String> ingredientes = new ArrayList<String>();
         ingredientes.add("pera");
         ingredientes.add("manzana");
@@ -43,12 +45,14 @@ public class Modelo {
     Recetario recetario = new Recetario();
     recetario.setNombre("libro1");
         ArrayList<Receta> recetas = new ArrayList<Receta>();
-        recetas.add(crearReceta());
-        recetas.add(crearReceta2());
+        recetas.add(crearReceta(recetario.getNombre()));
+        recetas.add(crearReceta2(recetario.getNombre()));
     recetario.setRecetas(recetas);
     recetario.setPrecio(100.00);
         return recetario;
     }
+    
+    //hasta  aqui lo de fuera de crear estructuras ojo eso sera con vision a cambiar
     protected void listarReceta(Receta receta){
         if(receta!=null){
              System.err.println("Este es el nombre de la receta elegida :" + receta.getNombre());
@@ -60,7 +64,17 @@ public class Modelo {
         }
        
     }
-
+    protected void listarRecetario(Recetario recetario){
+        if(recetario!=null){
+             System.err.println("Este es el nombre del recetario :" + recetario.getNombre());
+        System.err.println("Estos son sus recetas:");
+        for(Receta elemeto:recetario.getRecetas()){
+             System.err.println( elemeto.getNombre());
+        }
+        System.err.println("El precio del recetario es :" + recetario.getPrecio());
+        }
+       
+    }
     protected Receta buscarReceta(String nombreReceta, Recetario recetario) {
       
        for(Receta ele:recetario.getRecetas()){
@@ -72,6 +86,7 @@ public class Modelo {
         return null;
     }
 
+   
     
       
 }

@@ -22,13 +22,15 @@ import javax.xml.bind.annotation.XmlTransient;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "Receta")
 public class Receta implements Serializable {
-  
+
     @XmlElement
-   private String nombre;
-   @XmlElementWrapper 
-   private ArrayList<String> ingredienete = new ArrayList<>();
-   @XmlElement
-   private Double precio;
+    private String nombre;
+    @XmlAttribute
+    private String codigoRecetario;
+    @XmlElementWrapper
+    private ArrayList<String> ingredienete = new ArrayList<>();
+    @XmlElement
+    private Double precio;
     
     public Receta (){}
 
@@ -76,6 +78,14 @@ public class Receta implements Serializable {
      */
     public void setPrecio(Double precio) {
         this.precio = precio;
+    }
+
+    public String getCodigoRecetario() {
+        return codigoRecetario;
+    }
+
+    public void setCodigoRecetario(String codigoRecetario) {
+        this.codigoRecetario = codigoRecetario;
     }
 
  

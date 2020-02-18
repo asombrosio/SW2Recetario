@@ -26,9 +26,13 @@ public class Controlador {
      private void crearXMLReceta(String nombreReceta, String nombreFichero){
             mrs.crearXMLReceta(nombreFichero,modelo.buscarReceta(nombreReceta,crearRecetario())); 
     }
-    private Receta crearObjeto(String nombreFichero){  
+    private Receta crearObjetoReceta(String nombreFichero){  
         Receta receta = mrs.crearObjetoReceta(nombreFichero);
         return receta;
+    }
+        private Recetario crearObjetoRecetario(String nombreFichero){  
+        Recetario recetario = mrs.crearObjetoRecetario(nombreFichero);
+        return recetario;
     }
     private Recetario crearRecetario (){
     return modelo.crearRecetario();
@@ -51,11 +55,14 @@ public class Controlador {
                     break;
                 case 1:
                      // Importar agenda
-                    
+                     System.err.println("Introduce el nombre del fichero sin la extensión del recetario");
+                    respuesta = scanner.nextLine();
+                    Recetario recetario= crearObjetoRecetario(respuesta+".xml");
+                    modelo.listarRecetario(recetario);
                     break;
                 case 2:
                      //Exportar agenda
-                    System.err.println("Introduce el nombre del fichero sin la extensión");
+                    System.err.println("Introduce el nombre del fichero sin la extensión del recetario");
                      respuesta = scanner.nextLine();
                      crearXMLRecetario(respuesta+ ".xml", modelo.crearRecetario());
                     break;
@@ -70,9 +77,9 @@ public class Controlador {
                     break;
                 case 4:
                     // Importar Persona agenda
-                    System.err.println("Introduce el nombre del fichero sin la extensión");
+                    System.err.println("Introduce el nombre del fichero sin la extensión de la receta");
                     respuesta = scanner.nextLine();
-                    Receta receta= crearObjeto(respuesta+".xml");
+                    Receta receta= crearObjetoReceta(respuesta+".xml");
                     modelo.listarReceta(receta);
                     break;
                 case 5:
