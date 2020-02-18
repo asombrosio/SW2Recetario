@@ -127,7 +127,7 @@ public class Controlador {
                     break;  
                 default: 
                     System.err.println("Error, introduzca un numero del cero al 10");
-                    
+                   
             }
         }
     }
