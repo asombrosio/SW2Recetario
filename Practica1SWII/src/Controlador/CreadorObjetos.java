@@ -72,27 +72,27 @@ public class CreadorObjetos {
        protected Receta crearReceta1(String nombreRecetario){
     Receta receta = new Receta();
     receta.setNombre("Canelones");
-     receta.setCodigoRecetario(nombreRecetario);//sele adjunta como referencia de su recetario el mismonobre de este
+     receta.setCodigoRecetario(nombreRecetario);//sele adjunta como referencia de su recetario el mismo nombre de este
         ArrayList<String> ingredientes = new ArrayList<String>();
         ingredientes.add("Pasta");
         ingredientes.add("Bechamel");
         ingredientes.add("Carne");
-        ingredientes.add("tomate frito");
+        ingredientes.add("Tomate frito");
     receta.setIngredienete(ingredientes);
     receta.setPrecio(15.56);
         return receta;
     }  
     protected Receta crearReceta2(String nombreRecetario){
     Receta receta = new Receta();
-    receta.setNombre("cacatua");
+    receta.setNombre("Ensaladilla rusa");
     receta.setCodigoRecetario(nombreRecetario);
         ArrayList<String> ingredientes = new ArrayList<String>();
-        ingredientes.add("pera");
-        ingredientes.add("manzana");
-        ingredientes.add("Carne");
-        ingredientes.add("tomate");
+        ingredientes.add("patatas");
+        ingredientes.add("zanahoria");
+        ingredientes.add("aceitunas");
+        ingredientes.add("mayonesa");
     receta.setIngredienete(ingredientes);
-    receta.setPrecio(25.56);
+    receta.setPrecio(12.56);
         return receta;
     }
 }
