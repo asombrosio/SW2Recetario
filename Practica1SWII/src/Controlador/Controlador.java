@@ -36,7 +36,7 @@ public class Controlador {
         return recetario;
     }
     private Recetario crearRecetario (){
-    return co.crearRecetario();
+    return co.crearRecetario1();
     
     }
     
@@ -48,6 +48,7 @@ public class Controlador {
      String respuesta ;
      ArrayList<Receta> recetaArrayList = new ArrayList();
      Receta receta;
+     Recetario recetario = new Recetario();
         while(opcion != salir){
             System.err.println("Elige una opcion, pulsa 0 para salir");
             System.err.println("1= Importar recetario, 2=Exportar recetario");
@@ -60,14 +61,15 @@ public class Controlador {
                      // Importar recetario
                      System.err.println("Introduce el nombre del fichero sin la extensión del recetario");
                     respuesta = scanner.nextLine();
-                    Recetario recetario= importarObjetoRecetario(respuesta+".xml");
+                    recetario= importarObjetoRecetario(respuesta+".xml");
+                    recetaArrayList=recetario.getRecetas();
                     modelo.listarRecetario(recetario);
                     break;
                 case 2:
                      //Exportar recetario
                     System.err.println("Introduce el nombre del fichero sin la extensión del recetario");
                      respuesta = scanner.nextLine();
-                     crearXMLRecetario(respuesta+ ".xml", co.crearRecetario());
+                     crearXMLRecetario(respuesta+ ".xml",recetario);
                     break;
                 case 3:
                      System.err.println("En esta opcion creará el nombre del xml de la receta.");
@@ -82,7 +84,8 @@ public class Controlador {
                     // Importar Persona agenda
                     System.err.println("Introduce el nombre del fichero sin la extensión de la receta");
                     respuesta = scanner.nextLine();
-                     receta= importarObjetoReceta(respuesta+".xml");
+                    receta= importarObjetoReceta(respuesta+".xml");
+                    recetaArrayList.add(receta);
                     modelo.listarReceta(receta);
                     break;
                 case 5:
@@ -100,7 +103,8 @@ public class Controlador {
                 case 9:
                     // Añadir Agenda
                     
-                   // co.crearRecetario();
+                    recetario=co.crearRecetario(recetaArrayList);
+                    modelo.listarRecetario(recetario);
                     break;
                 case 10:
                   //no tiene permanecia
@@ -116,7 +120,7 @@ public class Controlador {
                     }
                     break;
                   case 12:
-                    // Listar Agenda
+                      modelo.listarRecetario(recetario);
                    
                     break;  
                 default: 

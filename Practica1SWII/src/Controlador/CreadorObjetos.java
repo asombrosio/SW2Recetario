@@ -22,24 +22,44 @@ public class CreadorObjetos {
         Receta receta = new Receta();
         String valor="";
         ArrayList<String> ingredientes = new ArrayList();
-      System.err.println("Introduce el nombre de la receta");
+      System.out.println("Introduce el nombre de la receta");
       receta.setNombre(scanner.nextLine());
-     System.err.println("Introduce los ingredientes, para finalizar introduce como utimo ingrediente un 0");
+     System.out.println("Introduce los ingredientes, para finalizar introduce como ultimo ingrediente un 0");
       while(valor.equals("0")!=true){
-    
-      ingredientes.add(scanner.nextLine());
-      valor=scanner.nextLine();
+        valor=scanner.nextLine();
+      ingredientes.add(valor);
+     
       }
       receta.setIngredienete(ingredientes);
-      System.err.println("Introduce el precio de la receta");   
+      System.out.println("Introduce el precio de la receta");   
       receta.setPrecio(Double.parseDouble(scanner.nextLine()));
       
       return receta;
     }
+    protected Recetario crearRecetario(ArrayList<Receta> recetas) {
+          Scanner scanner = new Scanner(System.in);
+        Recetario recetario = new Recetario();
+        String valor="";
+      if(recetas.isEmpty()){
+      
+      System.err.println("Debes crear recetas antes");
+      recetario=null;
+      }else{
+      System.out.println("Introduce el nombre del recetario");
+      recetario.setNombre(scanner.nextLine());
+      System.out.println("Se introduciran las recetas en caliente");
+      recetario.setRecetas(recetas);
+     
+      
+      System.out.println("Introduce el precio de la recetario");   
+      recetario.setPrecio(Double.parseDouble(scanner.nextLine()));
+      }
+      return recetario;
+    }
     
     
     //por defecto
-     protected Recetario crearRecetario(){
+     protected Recetario crearRecetario1(){
     Recetario recetario = new Recetario();
     recetario.setNombre("libro1");
         ArrayList<Receta> recetas = new ArrayList<Receta>();
