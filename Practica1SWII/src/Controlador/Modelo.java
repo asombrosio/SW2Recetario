@@ -18,13 +18,13 @@ public class Modelo {
   
     
    
-
+    
     protected void listarReceta(Receta receta){
         if(receta!=null){
              System.err.println("Este es el nombre de la receta elegida :" + receta.getNombre());
         System.err.println("Estos son los ingredientes:");
         for(String elemeto:receta.getIngredienete()){
-             System.err.println( elemeto);
+             System.err.println(elemeto);
         }
         System.err.println("El precio de la receta es :" + receta.getPrecio());
         }
