@@ -8,14 +8,34 @@ package Controlador;
 import Recetarios.Receta;
 import Recetarios.Recetario;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
  * @author david
  */
 public class Modelo {
-   
-    protected Receta crearReceta(String nombreRecetario){
+  
+    protected Receta crearReceta() {
+          Scanner scanner = new Scanner(System.in);
+        Receta receta = new Receta();
+        String valor="";
+        ArrayList<String> ingredientes = new ArrayList();
+      System.err.println("Introduce el nombre de la receta");
+      receta.setNombre(scanner.nextLine());
+     System.err.println("Introduce los ingredientes, para finalizar introduce como utimo ingrediente un 0");
+      while(valor.equals("0")!=true){
+    
+      ingredientes.add(scanner.nextLine());
+      valor=scanner.nextLine();
+      }
+      receta.setIngredienete(ingredientes);
+      System.err.println("Introduce el precio de la receta");   
+      receta.setPrecio(Double.parseDouble(scanner.nextLine()));
+      
+      return receta;
+    }
+    protected Receta crearReceta1(String nombreRecetario){
     Receta receta = new Receta();
     receta.setNombre("Canelones");
      receta.setCodigoRecetario(nombreRecetario);//sele adjunta como referencia de su recetario el mismonobre de este
@@ -45,7 +65,7 @@ public class Modelo {
     Recetario recetario = new Recetario();
     recetario.setNombre("libro1");
         ArrayList<Receta> recetas = new ArrayList<Receta>();
-        recetas.add(crearReceta(recetario.getNombre()));
+        recetas.add(crearReceta1(recetario.getNombre()));
         recetas.add(crearReceta2(recetario.getNombre()));
     recetario.setRecetas(recetas);
     recetario.setPrecio(100.00);
@@ -86,7 +106,7 @@ public class Modelo {
         return null;
     }
 
-   
-    
-      
+ 
+
+     
 }

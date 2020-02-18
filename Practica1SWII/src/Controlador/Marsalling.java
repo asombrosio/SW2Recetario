@@ -59,7 +59,7 @@ protected void crearXMLReceta(String nombreFichero, Receta receta) {
      
      }
     }
-protected Receta crearObjetoReceta(String nombreFichero){
+protected Receta importarObjetoReceta(String nombreFichero){
     Receta receta= new Receta();
        try {  
    
@@ -105,7 +105,7 @@ protected void crearXMLRecetario(String nombreFichero, Recetario recetario) {
             Logger.getLogger(Marsalling.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-protected Recetario crearObjetoRecetario(String nombreFichero){
+protected Recetario importarObjetoRecetario(String nombreFichero){
     Recetario recetario= new Recetario();
        try {  
    

@@ -26,12 +26,12 @@ public class Controlador {
      private void crearXMLReceta(String nombreReceta, String nombreFichero){
             mrs.crearXMLReceta(nombreFichero,modelo.buscarReceta(nombreReceta,crearRecetario())); 
     }
-    private Receta crearObjetoReceta(String nombreFichero){  
-        Receta receta = mrs.crearObjetoReceta(nombreFichero);
+    private Receta importarObjetoReceta(String nombreFichero){  
+        Receta receta = mrs.importarObjetoReceta(nombreFichero);
         return receta;
     }
-        private Recetario crearObjetoRecetario(String nombreFichero){  
-        Recetario recetario = mrs.crearObjetoRecetario(nombreFichero);
+        private Recetario importarObjetoRecetario(String nombreFichero){  
+        Recetario recetario = mrs.importarObjetoRecetario(nombreFichero);
         return recetario;
     }
     private Recetario crearRecetario (){
@@ -47,21 +47,21 @@ public class Controlador {
      String respuesta ;    
         while(opcion != salir){
             System.err.println("Elige una opcion, pulsa 0 para salir");
-            System.err.println("1= Importar receta, 2=Exportar receta");
+            System.err.println("1= Importar recetario, 2=Exportar recetario");
             opcion = Integer.parseInt(scanner.nextLine());
             switch(opcion){
                  case 0:
                     System.err.println("Saliendo del programa");
                     break;
                 case 1:
-                     // Importar agenda
+                     // Importar recetario
                      System.err.println("Introduce el nombre del fichero sin la extensión del recetario");
                     respuesta = scanner.nextLine();
-                    Recetario recetario= crearObjetoRecetario(respuesta+".xml");
+                    Recetario recetario= importarObjetoRecetario(respuesta+".xml");
                     modelo.listarRecetario(recetario);
                     break;
                 case 2:
-                     //Exportar agenda
+                     //Exportar recetario
                     System.err.println("Introduce el nombre del fichero sin la extensión del recetario");
                      respuesta = scanner.nextLine();
                      crearXMLRecetario(respuesta+ ".xml", modelo.crearRecetario());
@@ -79,7 +79,7 @@ public class Controlador {
                     // Importar Persona agenda
                     System.err.println("Introduce el nombre del fichero sin la extensión de la receta");
                     respuesta = scanner.nextLine();
-                    Receta receta= crearObjetoReceta(respuesta+".xml");
+                    Receta receta= importarObjetoReceta(respuesta+".xml");
                     modelo.listarReceta(receta);
                     break;
                 case 5:
@@ -95,9 +95,15 @@ public class Controlador {
                     // Consulat xQuery a la Agenda
                     break;
                 case 9:
-                    // Añadir persona
+                    // Añadir Agenda
+                    modelo.crearRecetario();
                     break;
                 case 10:
+                  
+                    modelo.listarReceta(modelo.crearReceta());
+                    // Añadir Persona
+                    break;
+                 case 11:
                     // Listar Agenda
                     break;
                 default: 
