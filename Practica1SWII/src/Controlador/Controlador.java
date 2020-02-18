@@ -19,6 +19,7 @@ public class Controlador {
     Marsalling mrs = new Marsalling();
     ValidarXSD vXSD = new ValidarXSD();
     Modelo modelo = new Modelo();
+    CreadorObjetos co= new CreadorObjetos();
     
     private void crearXMLRecetario(String nombreFichero, Recetario recetario){
        mrs.crearXMLRecetario(nombreFichero, recetario);  
@@ -100,7 +101,7 @@ public class Controlador {
                     break;
                 case 10:
                   
-                    modelo.listarReceta(modelo.crearReceta());
+                    modelo.listarReceta(co.crearReceta());
                     // Añadir Persona
                     break;
                  case 11:
