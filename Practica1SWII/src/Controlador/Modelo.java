@@ -16,63 +16,9 @@ import java.util.Scanner;
  */
 public class Modelo {
   
-    protected Receta crearReceta() {
-          Scanner scanner = new Scanner(System.in);
-        Receta receta = new Receta();
-        String valor="";
-        ArrayList<String> ingredientes = new ArrayList();
-      System.err.println("Introduce el nombre de la receta");
-      receta.setNombre(scanner.nextLine());
-     System.err.println("Introduce los ingredientes, para finalizar introduce como utimo ingrediente un 0");
-      while(valor.equals("0")!=true){
     
-      ingredientes.add(scanner.nextLine());
-      valor=scanner.nextLine();
-      }
-      receta.setIngredienete(ingredientes);
-      System.err.println("Introduce el precio de la receta");   
-      receta.setPrecio(Double.parseDouble(scanner.nextLine()));
-      
-      return receta;
-    }
-    protected Receta crearReceta1(String nombreRecetario){
-    Receta receta = new Receta();
-    receta.setNombre("Canelones");
-     receta.setCodigoRecetario(nombreRecetario);//sele adjunta como referencia de su recetario el mismonobre de este
-        ArrayList<String> ingredientes = new ArrayList<String>();
-        ingredientes.add("Pasta");
-        ingredientes.add("Bechamel");
-        ingredientes.add("Carne");
-        ingredientes.add("tomate frito");
-    receta.setIngredienete(ingredientes);
-    receta.setPrecio(15.56);
-        return receta;
-    }  
-    protected Receta crearReceta2(String nombreRecetario){
-    Receta receta = new Receta();
-    receta.setNombre("cacatua");
-    receta.setCodigoRecetario(nombreRecetario);
-        ArrayList<String> ingredientes = new ArrayList<String>();
-        ingredientes.add("pera");
-        ingredientes.add("manzana");
-        ingredientes.add("Carne");
-        ingredientes.add("tomate");
-    receta.setIngredienete(ingredientes);
-    receta.setPrecio(25.56);
-        return receta;
-    }
-    protected Recetario crearRecetario(){
-    Recetario recetario = new Recetario();
-    recetario.setNombre("libro1");
-        ArrayList<Receta> recetas = new ArrayList<Receta>();
-        recetas.add(crearReceta1(recetario.getNombre()));
-        recetas.add(crearReceta2(recetario.getNombre()));
-    recetario.setRecetas(recetas);
-    recetario.setPrecio(100.00);
-        return recetario;
-    }
-    
-    //hasta  aqui lo de fuera de crear estructuras ojo eso sera con vision a cambiar
+   
+
     protected void listarReceta(Receta receta){
         if(receta!=null){
              System.err.println("Este es el nombre de la receta elegida :" + receta.getNombre());

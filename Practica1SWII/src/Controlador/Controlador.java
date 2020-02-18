@@ -36,7 +36,7 @@ public class Controlador {
         return recetario;
     }
     private Recetario crearRecetario (){
-    return modelo.crearRecetario();
+    return co.crearRecetario();
     
     }
     
@@ -65,7 +65,7 @@ public class Controlador {
                      //Exportar recetario
                     System.err.println("Introduce el nombre del fichero sin la extensión del recetario");
                      respuesta = scanner.nextLine();
-                     crearXMLRecetario(respuesta+ ".xml", modelo.crearRecetario());
+                     crearXMLRecetario(respuesta+ ".xml", co.crearRecetario());
                     break;
                 case 3:
                      System.err.println("En esta opcion creará el nombre del xml de la receta.");
@@ -97,7 +97,7 @@ public class Controlador {
                     break;
                 case 9:
                     // Añadir Agenda
-                    modelo.crearRecetario();
+                    co.crearRecetario();
                     break;
                 case 10:
                   

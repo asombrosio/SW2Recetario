@@ -6,6 +6,7 @@
 package Controlador;
 
 import Recetarios.Receta;
+import Recetarios.Recetario;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -36,4 +37,42 @@ public class CreadorObjetos {
       return receta;
     }
     
+    
+    //por defecto
+     protected Recetario crearRecetario(){
+    Recetario recetario = new Recetario();
+    recetario.setNombre("libro1");
+        ArrayList<Receta> recetas = new ArrayList<Receta>();
+        recetas.add(crearReceta1(recetario.getNombre()));
+        recetas.add(crearReceta2(recetario.getNombre()));
+    recetario.setRecetas(recetas);
+    recetario.setPrecio(100.00);
+        return recetario;
+    }
+       protected Receta crearReceta1(String nombreRecetario){
+    Receta receta = new Receta();
+    receta.setNombre("Canelones");
+     receta.setCodigoRecetario(nombreRecetario);//sele adjunta como referencia de su recetario el mismonobre de este
+        ArrayList<String> ingredientes = new ArrayList<String>();
+        ingredientes.add("Pasta");
+        ingredientes.add("Bechamel");
+        ingredientes.add("Carne");
+        ingredientes.add("tomate frito");
+    receta.setIngredienete(ingredientes);
+    receta.setPrecio(15.56);
+        return receta;
+    }  
+    protected Receta crearReceta2(String nombreRecetario){
+    Receta receta = new Receta();
+    receta.setNombre("cacatua");
+    receta.setCodigoRecetario(nombreRecetario);
+        ArrayList<String> ingredientes = new ArrayList<String>();
+        ingredientes.add("pera");
+        ingredientes.add("manzana");
+        ingredientes.add("Carne");
+        ingredientes.add("tomate");
+    receta.setIngredienete(ingredientes);
+    receta.setPrecio(25.56);
+        return receta;
+    }
 }
