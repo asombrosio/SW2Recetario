@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!ELEMENT Recetario (nombre|recetas|precio)*>
+
+
+<!ELEMENT nombre (#PCDATA)>
+
+
+<!ELEMENT recetas (recetas|nombre|ingredienete|precio)*>
+
+
+<!ELEMENT ingredienete (#PCDATA|ingredienete)*>
+
+<!ELEMENT precio (#PCDATA)>
