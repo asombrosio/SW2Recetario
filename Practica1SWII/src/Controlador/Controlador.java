@@ -45,7 +45,9 @@ public class Controlador {
         Scanner scanner = new Scanner(System.in);
     Integer opcion = -1;
     Integer salir = 0;
-     String respuesta ;    
+     String respuesta ;
+     ArrayList<Receta> recetaArrayList = new ArrayList();
+     Receta receta;
         while(opcion != salir){
             System.err.println("Elige una opcion, pulsa 0 para salir");
             System.err.println("1= Importar recetario, 2=Exportar recetario");
@@ -80,7 +82,7 @@ public class Controlador {
                     // Importar Persona agenda
                     System.err.println("Introduce el nombre del fichero sin la extensión de la receta");
                     respuesta = scanner.nextLine();
-                    Receta receta= importarObjetoReceta(respuesta+".xml");
+                     receta= importarObjetoReceta(respuesta+".xml");
                     modelo.listarReceta(receta);
                     break;
                 case 5:
@@ -97,16 +99,26 @@ public class Controlador {
                     break;
                 case 9:
                     // Añadir Agenda
-                    co.crearRecetario();
+                    
+                   // co.crearRecetario();
                     break;
                 case 10:
-                  
-                    modelo.listarReceta(co.crearReceta());
+                  //no tiene permanecia
+                    receta=co.crearReceta();
+                    recetaArrayList.add(receta);
+                    modelo.listarReceta(receta);
                     // Añadir Persona
                     break;
                  case 11:
-                    // Listar Agenda
+                    // Listar recetas en caliente
+                     for(Receta ele:recetaArrayList){
+                         System.out.println(ele.getNombre());
+                    }
                     break;
+                  case 12:
+                    // Listar Agenda
+                   
+                    break;  
                 default: 
                     System.err.println("Error, introduzca un numero del cero al 10");
                     
