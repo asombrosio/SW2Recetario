@@ -8,47 +8,17 @@ package Controlador;
 import Recetarios.Receta;
 import Recetarios.Recetario;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
  * @author david
  */
 public class Modelo {
+  
+    
    
-    protected Receta crearReceta(){
-    Receta receta = new Receta();
-    receta.setNombre("Canelones");
-        ArrayList<String> ingredientes = new ArrayList<String>();
-        ingredientes.add("Pasta");
-        ingredientes.add("Bechamel");
-        ingredientes.add("Carne");
-        ingredientes.add("tomate frito");
-    receta.setIngredienete(ingredientes);
-    receta.setPrecio(15.56);
-        return receta;
-    }  
-    protected Receta crearReceta2(){
-    Receta receta = new Receta();
-    receta.setNombre("cacatua");
-        ArrayList<String> ingredientes = new ArrayList<String>();
-        ingredientes.add("pera");
-        ingredientes.add("manzana");
-        ingredientes.add("Carne");
-        ingredientes.add("tomate");
-    receta.setIngredienete(ingredientes);
-    receta.setPrecio(25.56);
-        return receta;
-    }
-    protected Recetario crearRecetario(){
-    Recetario recetario = new Recetario();
-    recetario.setNombre("libro1");
-        ArrayList<Receta> recetas = new ArrayList<Receta>();
-        recetas.add(crearReceta());
-        recetas.add(crearReceta2());
-    recetario.setRecetas(recetas);
-    recetario.setPrecio(100.00);
-        return recetario;
-    }
+
     protected void listarReceta(Receta receta){
         if(receta!=null){
              System.err.println("Este es el nombre de la receta elegida :" + receta.getNombre());
@@ -60,7 +30,17 @@ public class Modelo {
         }
        
     }
-
+    protected void listarRecetario(Recetario recetario){
+        if(recetario!=null){
+             System.err.println("Este es el nombre del recetario :" + recetario.getNombre());
+        System.err.println("Estos son sus recetas:");
+        for(Receta elemeto:recetario.getRecetas()){
+             System.err.println( elemeto.getNombre());
+        }
+        System.err.println("El precio del recetario es :" + recetario.getPrecio());
+        }
+       
+    }
     protected Receta buscarReceta(String nombreReceta, Recetario recetario) {
       
        for(Receta ele:recetario.getRecetas()){
@@ -72,6 +52,7 @@ public class Modelo {
         return null;
     }
 
-    
-      
+ 
+
+     
 }

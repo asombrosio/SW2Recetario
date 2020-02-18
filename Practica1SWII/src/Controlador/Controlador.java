@@ -19,6 +19,7 @@ public class Controlador {
     Marsalling mrs = new Marsalling();
     ValidarXSD vXSD = new ValidarXSD();
     Modelo modelo = new Modelo();
+    CreadorObjetos co= new CreadorObjetos();
     
     private void crearXMLRecetario(String nombreFichero, Recetario recetario){
        mrs.crearXMLRecetario(nombreFichero, recetario);  
@@ -26,12 +27,16 @@ public class Controlador {
      private void crearXMLReceta(String nombreReceta, String nombreFichero){
             mrs.crearXMLReceta(nombreFichero,modelo.buscarReceta(nombreReceta,crearRecetario())); 
     }
-    private Receta crearObjeto(String nombreFichero){  
-        Receta receta = mrs.crearObjetoReceta(nombreFichero);
+    private Receta importarObjetoReceta(String nombreFichero){  
+        Receta receta = mrs.importarObjetoReceta(nombreFichero);
         return receta;
     }
+        private Recetario importarObjetoRecetario(String nombreFichero){  
+        Recetario recetario = mrs.importarObjetoRecetario(nombreFichero);
+        return recetario;
+    }
     private Recetario crearRecetario (){
-    return modelo.crearRecetario();
+    return co.crearRecetario();
     
     }
     
@@ -40,24 +45,29 @@ public class Controlador {
         Scanner scanner = new Scanner(System.in);
     Integer opcion = -1;
     Integer salir = 0;
-     String respuesta ;    
+     String respuesta ;
+     ArrayList<Receta> recetaArrayList = new ArrayList();
+     Receta receta;
         while(opcion != salir){
             System.err.println("Elige una opcion, pulsa 0 para salir");
-            System.err.println("1= Importar receta, 2=Exportar receta");
+            System.err.println("1= Importar recetario, 2=Exportar recetario");
             opcion = Integer.parseInt(scanner.nextLine());
             switch(opcion){
                  case 0:
                     System.err.println("Saliendo del programa");
                     break;
                 case 1:
-                     // Importar agenda
-                    
+                     // Importar recetario
+                     System.err.println("Introduce el nombre del fichero sin la extensión del recetario");
+                    respuesta = scanner.nextLine();
+                    Recetario recetario= importarObjetoRecetario(respuesta+".xml");
+                    modelo.listarRecetario(recetario);
                     break;
                 case 2:
-                     //Exportar agenda
-                    System.err.println("Introduce el nombre del fichero sin la extensión");
+                     //Exportar recetario
+                    System.err.println("Introduce el nombre del fichero sin la extensión del recetario");
                      respuesta = scanner.nextLine();
-                     crearXMLRecetario(respuesta+ ".xml", modelo.crearRecetario());
+                     crearXMLRecetario(respuesta+ ".xml", co.crearRecetario());
                     break;
                 case 3:
                      System.err.println("En esta opcion creará el nombre del xml de la receta.");
@@ -70,9 +80,9 @@ public class Controlador {
                     break;
                 case 4:
                     // Importar Persona agenda
-                    System.err.println("Introduce el nombre del fichero sin la extensión");
+                    System.err.println("Introduce el nombre del fichero sin la extensión de la receta");
                     respuesta = scanner.nextLine();
-                    Receta receta= crearObjeto(respuesta+".xml");
+                     receta= importarObjetoReceta(respuesta+".xml");
                     modelo.listarReceta(receta);
                     break;
                 case 5:
@@ -88,11 +98,27 @@ public class Controlador {
                     // Consulat xQuery a la Agenda
                     break;
                 case 9:
-                    // Añadir persona
+                    // Añadir Agenda
+                    
+                   // co.crearRecetario();
                     break;
                 case 10:
-                    // Listar Agenda
+                  //no tiene permanecia
+                    receta=co.crearReceta();
+                    recetaArrayList.add(receta);
+                    modelo.listarReceta(receta);
+                    // Añadir Persona
                     break;
+                 case 11:
+                    // Listar recetas en caliente
+                     for(Receta ele:recetaArrayList){
+                         System.out.println(ele.getNombre());
+                    }
+                    break;
+                  case 12:
+                    // Listar Agenda
+                   
+                    break;  
                 default: 
                     System.err.println("Error, introduzca un numero del cero al 10");
                     

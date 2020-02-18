@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Receta>
+<Receta codigoRecetario="libro1">
     <nombre>cacatua</nombre>
     <ingredienete>
         <ingredienete>pera</ingredienete>
