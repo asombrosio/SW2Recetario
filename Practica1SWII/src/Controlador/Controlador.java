@@ -92,7 +92,8 @@ public class Controlador {
                     // Validacion DTD de la agenda
                     break;
                 case 6:
-                    System.out.println("file.xml es valido con file.xsd? "+ vXSD.validarXSD("./files/xml/file.xsd", "./files/xml/file.xml"));
+                    //validar XSD
+                    System.out.println("file.xml es valido con file.xsd? "+ vXSD.validarXSD("./files/xsd/recetario.xsd", "./files/xml/yaa.xml"));
                     break;
                 case 7:
                     // Escribir sentencia Xpath y ejecutarla
@@ -120,12 +121,13 @@ public class Controlador {
                     }
                     break;
                   case 12:
+                       // Listar recetas en agenda
                       modelo.listarRecetario(recetario);
                    
                     break;  
                 default: 
                     System.err.println("Error, introduzca un numero del cero al 10");
-                    
+                   
             }
         }
     }

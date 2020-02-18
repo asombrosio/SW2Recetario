@@ -2,7 +2,7 @@
 <Recetario>
     <nombre>libro1</nombre>
     <recetas>
-        <recetas codigoRecetario="libro1">
+        <recetas>
             <nombre>Canelones</nombre>
             <ingredienete>
                 <ingredienete>Pasta</ingredienete>
@@ -12,7 +12,7 @@
             </ingredienete>
             <precio>15.56</precio>
         </recetas>
-        <recetas codigoRecetario="libro1">
+        <recetas>
             <nombre>cacatua</nombre>
             <ingredienete>
                 <ingredienete>pera</ingredienete>
