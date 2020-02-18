@@ -2,6 +2,18 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< HEAD
         <group/>
+=======
+        <group>
+            <file>file:/C:/Users/david/Documents/GitHub/SW2Recetario/Practica1SWII/src/Controlador/validarDTD.java</file>
+            <file>file:/C:/Users/david/Documents/GitHub/SW2Recetario/Practica1SWII/src/Controlador/Controlador.java</file>
+            <file>file:/C:/Users/david/Documents/GitHub/SW2Recetario/Practica1SWII/src/Recetarios/Receta.java</file>
+            <file>file:/C:/Users/david/Documents/GitHub/SW2Recetario/Practica1SWII/src/Controlador/ValidarXSD.java</file>
+            <file>file:/C:/Users/david/Documents/GitHub/SW2Recetario/Practica1SWII/src/Controlador/Marsalling.java</file>
+            <file>file:/C:/Users/david/Documents/GitHub/SW2Recetario/Practica1SWII/src/Controlador/Modelo.java</file>
+            <file>file:/C:/Users/david/Documents/GitHub/SW2Recetario/Practica1SWII/src/principal/Main.java</file>
+        </group>
+>>>>>>> 26a756c98571b725dfb92c91bbbfd574626ed30a
     </open-files>
 </project-private>

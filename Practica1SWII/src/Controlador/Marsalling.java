@@ -26,6 +26,7 @@ public class Marsalling {
 
 
 protected void crearXMLReceta(String nombreFichero, Receta receta) {
+     if(receta!=null){
         try {
             FileWriter fichero = null;
             File file = new File("./files/xml/" + nombreFichero);
@@ -52,6 +53,11 @@ protected void crearXMLReceta(String nombreFichero, Receta receta) {
         } catch (IOException ex) {
             Logger.getLogger(Marsalling.class.getName()).log(Level.SEVERE, null, ex);
         }
+     }else{
+     
+         System.out.println("No se pudo crear el xml");
+     
+     }
     }
 protected Receta crearObjetoReceta(String nombreFichero){
     Receta receta= new Receta();
