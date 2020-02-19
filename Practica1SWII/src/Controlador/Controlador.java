@@ -50,16 +50,16 @@ public class Controlador {
      Receta receta;
      Recetario recetario = new Recetario();
         while(opcion != salir){
-            System.err.println("Elige una opcion, pulsa 0 para salir");
-            System.err.println("1= Importar recetario, 2=Exportar recetario");
+            System.out.println("Elige una opcion, pulsa 0 para salir");
+            System.out.println("1= Importar recetario, 2=Exportar recetario");
             opcion = Integer.parseInt(scanner.nextLine());
             switch(opcion){
                  case 0:
-                    System.err.println("Saliendo del programa");
+                    System.out.println("Saliendo del programa");
                     break;
                 case 1:
                      // Importar recetario
-                     System.err.println("Introduce el nombre del fichero sin la extensión del recetario");
+                     System.out.println("Introduce el nombre del fichero sin la extensión del recetario");
                     respuesta = scanner.nextLine();
                     recetario= importarObjetoRecetario(respuesta+".xml");
                     recetaArrayList=recetario.getRecetas();
@@ -67,13 +67,13 @@ public class Controlador {
                     break;
                 case 2:
                      //Exportar recetario
-                    System.err.println("Introduce el nombre del fichero sin la extensión del recetario");
+                    System.out.println("Introduce el nombre del fichero sin la extensión del recetario");
                      respuesta = scanner.nextLine();
                      crearXMLRecetario(respuesta+ ".xml",recetario);
                     break;
                 case 3:
-                     System.err.println("En esta opcion creará el nombre del xml de la receta.");
-                     System.err.println("Introduce el nombre de la receta a exportar");
+                     System.out.println("En esta opcion creará el nombre del xml de la receta.");
+                     System.out.println("Introduce el nombre de la receta a exportar");
                      respuesta = scanner.nextLine();      
                      crearXMLReceta(respuesta,respuesta+".xml");
                              
@@ -82,7 +82,7 @@ public class Controlador {
                     break;
                 case 4:
                     // Importar Persona agenda
-                    System.err.println("Introduce el nombre del fichero sin la extensión de la receta");
+                    System.out.println("Introduce el nombre del fichero sin la extensión de la receta");
                     respuesta = scanner.nextLine();
                     receta= importarObjetoReceta(respuesta+".xml");
                     recetaArrayList.add(receta);
@@ -126,7 +126,7 @@ public class Controlador {
                    
                     break;  
                 default: 
-                    System.err.println("Error, introduzca un numero del cero al 10");
+                    System.out.println("Error, introduzca un numero del cero al 10");
                    
             }
         }

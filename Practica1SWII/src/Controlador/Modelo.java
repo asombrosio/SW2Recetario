@@ -21,23 +21,23 @@ public class Modelo {
     
     protected void listarReceta(Receta receta){
         if(receta!=null){
-             System.err.println("Este es el nombre de la receta elegida :" + receta.getNombre());
-        System.err.println("Estos son los ingredientes:");
+             System.out.println("Este es el nombre de la receta elegida :" + receta.getNombre());
+        System.out.println("Estos son los ingredientes:");
         for(String elemeto:receta.getIngredienete()){
-             System.err.println(elemeto);
+             System.out.println(elemeto);
         }
-        System.err.println("El precio de la receta es :" + receta.getPrecio());
+        System.out.println("El precio de la receta es :" + receta.getPrecio());
         }
        
     }
     protected void listarRecetario(Recetario recetario){
         if(recetario!=null){
-             System.err.println("Este es el nombre del recetario :" + recetario.getNombre());
-        System.err.println("Estos son sus recetas:");
+             System.out.println("Este es el nombre del recetario :" + recetario.getNombre());
+        System.out.println("Estos son sus recetas:");
         for(Receta elemeto:recetario.getRecetas()){
-             System.err.println( elemeto.getNombre());
+             System.out.println( elemeto.getNombre());
         }
-        System.err.println("El precio del recetario es :" + recetario.getPrecio());
+        System.out.println("El precio del recetario es :" + recetario.getPrecio());
         }
        
     }
@@ -48,7 +48,7 @@ public class Modelo {
                return ele;
            }       
        }
-       System.err.println("No existe la receta");
+       System.out.println("No existe la receta");
         return null;
     }
 

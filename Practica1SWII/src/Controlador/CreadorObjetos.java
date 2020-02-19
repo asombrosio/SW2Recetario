@@ -42,7 +42,7 @@ public class CreadorObjetos {
         String valor="";
       if(recetas.isEmpty()){
       
-      System.err.println("Debes crear recetas antes");
+      System.out.println("Debes crear recetas antes");
       recetario=null;
       }else{
       System.out.println("Introduce el nombre del recetario");
