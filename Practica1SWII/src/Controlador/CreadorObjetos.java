@@ -87,10 +87,10 @@ public class CreadorObjetos {
     receta.setNombre("Ensaladilla rusa");
     receta.setCodigoRecetario(nombreRecetario);
         ArrayList<String> ingredientes = new ArrayList<String>();
-        ingredientes.add("patatas");
-        ingredientes.add("zanahoria");
-        ingredientes.add("aceitunas");
-        ingredientes.add("mayonesa");
+        ingredientes.add("Patatas");
+        ingredientes.add("Zanahorias");
+        ingredientes.add("Aceitunas");
+        ingredientes.add("AMayonesa");
     receta.setIngredienete(ingredientes);
     receta.setPrecio(12.56);
         return receta;

@@ -13,23 +13,23 @@
             <precio>15.56</precio>
         </recetas>
         <recetas>
-            <nombre>cacatua</nombre>
+            <nombre>Ensaladilla rusa</nombre>
             <ingredienete>
-                <ingredienete>pera</ingredienete>
-                <ingredienete>manzana</ingredienete>
-                <ingredienete>Carne</ingredienete>
-                <ingredienete>tomate</ingredienete>
+                <ingredienete>Patatas</ingredienete>
+                <ingredienete>Zanahorias</ingredienete>
+                <ingredienete>Aceitunas</ingredienete>
+                <ingredienete>Mayonesa</ingredienete>
             </ingredienete>
-            <precio>25.56</precio>
+            <precio>12.56</precio>
         </recetas>
         <recetas>
-            <nombre>apoteke</nombre>
+            <nombre>pan</nombre>
             <ingredienete>
-                <ingredienete>vendas</ingredienete>
-                <ingredienete>medicamentos</ingredienete>
+                <ingredienete>trigo</ingredienete>
+                <ingredienete>harina</ingredienete>
                 <ingredienete>0</ingredienete>
             </ingredienete>
-            <precio>0.0</precio>
+            <precio>0.55</precio>
         </recetas>
     </recetas>
     <precio>100.0</precio>
