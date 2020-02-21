@@ -18,6 +18,7 @@ import java.util.Scanner;
 public class Controlador {
     Marsalling mrs = new Marsalling();
     ValidarXSD vXSD = new ValidarXSD();
+    ValidarDTD vDTD = new ValidarDTD();
     Modelo modelo = new Modelo();
     CreadorObjetos co= new CreadorObjetos();
     XQuery XQ= new XQuery();
@@ -91,10 +92,12 @@ public class Controlador {
                     break;
                 case 5:
                     // Validacion DTD de la agenda
+                    System.out.println("es valido el xml con su dtd"+  vDTD.validarXML( "./files/xml/prueba.xml"));
+                   
                     break;
                 case 6:
                     //validar XSD
-                    System.out.println("file.xml es valido con file.xsd? "+ vXSD.validarXSD("./files/xsd/recetario.xsd", "./files/xml/yaa.xml"));
+                    System.out.println("file.xml es valido con su xsd? "+ vXSD.validarXSD("./files/xsd/recetario.xsd", "./files/xml/prueba.xml"));
                     break;
                 case 7:
                     // Escribir sentencia Xpath y ejecutarla

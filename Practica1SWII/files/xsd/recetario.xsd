@@ -1,5 +1,7 @@
 
 
+
+
 <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="Recetario">
     <xs:complexType>
@@ -21,6 +23,7 @@
                     </xs:element>
                     <xs:element type="xs:float" name="precio"/>
                   </xs:sequence>
+                  <xs:attribute type="xs:string" name="dificultad" use="optional"/>
                 </xs:complexType>
               </xs:element>
             </xs:sequence>
