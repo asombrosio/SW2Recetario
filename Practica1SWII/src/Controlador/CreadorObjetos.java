@@ -28,7 +28,9 @@ public class CreadorObjetos {
         System.out.println("Introduce los ingredientes, para finalizar introduce como ultimo ingrediente un 0");
         while (valor.equals("0") != true) {
             valor = scanner.nextLine();
-            ingredientes.add(valor);
+            if(valor.equals("0")==false){
+                 ingredientes.add(valor);
+            }
 
         }
         receta.setIngredienete(ingredientes);

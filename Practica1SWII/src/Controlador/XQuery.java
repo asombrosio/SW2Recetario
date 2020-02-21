@@ -86,4 +86,35 @@ public class XQuery {
         }
     
     }
+      protected void verRecetasConPrecioMayorA2€(){
+    
+     try {
+          
+            File queryFile = new File("./files/XQuery/Query.xqy"); 
+
+            XQDataSource xqjd = new SaxonXQDataSource();
+            XQConnection xqjc = xqjd.getConnection();
+            InputStream inputStream = null;
+            try {
+                inputStream = new FileInputStream(queryFile);
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(XQuery.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            XQPreparedExpression exp = xqjc.prepareExpression(inputStream);
+            XQResultSequence result = exp.executeQuery();
+            
+
+            while (result.next()) {
+                
+                System.out.println(result.getItemAsString(null));
+            }
+            result.close();
+            exp.close();
+            xqjc.close();
+
+        } catch (XQException ex) {
+            Logger.getLogger(XQuery.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    
+    }
 }

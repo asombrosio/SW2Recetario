@@ -1,4 +1,5 @@
-for $x in doc("Biblioteca.xml")/Biblioteca/libro
-where $x/precio>30
-order by $x/titulo
+for $x in 
+doc("./files/xml/prueba.xml")/Recetario/recetas/recetas
+where $x/precio>2
+order by $x/nombre
 return $x

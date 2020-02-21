@@ -8,7 +8,6 @@
                 <ingredienete>Patatas</ingredienete>
                 <ingredienete>Aceite</ingredienete>
                 <ingredienete>Sal</ingredienete>
-                <ingredienete>0</ingredienete>
             </ingredienete>
             <precio>2.0</precio>
         </recetas>
@@ -18,7 +17,6 @@
                 <ingredienete>Huevos</ingredienete>
                 <ingredienete>Aceite</ingredienete>
                 <ingredienete>Sal</ingredienete>
-                <ingredienete>0</ingredienete>
             </ingredienete>
             <precio>1.5</precio>
         </recetas>
@@ -30,7 +28,6 @@
                 <ingredienete>Sal</ingredienete>
                 <ingredienete>Pimienta</ingredienete>
                 <ingredienete>Ajo</ingredienete>
-                <ingredienete>0</ingredienete>
             </ingredienete>
             <precio>3.0</precio>
         </recetas>
