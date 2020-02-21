@@ -20,6 +20,7 @@ public class Controlador {
     ValidarXSD vXSD = new ValidarXSD();
     Modelo modelo = new Modelo();
     CreadorObjetos co= new CreadorObjetos();
+    XQuery XQ= new XQuery();
     
     private void crearXMLRecetario(String nombreFichero, Recetario recetario){
        mrs.crearXMLRecetario(nombreFichero, recetario);  
@@ -100,6 +101,7 @@ public class Controlador {
                     break;
                 case 8:
                     // Consulat xQuery a la Agenda
+                    XQ.Query1();
                     break;
                 case 9:
                     // Añadir Agenda
@@ -108,7 +110,7 @@ public class Controlador {
                     modelo.listarRecetario(recetario);
                     break;
                 case 10:
-                  //no tiene permanecia
+                  
                     receta=co.crearReceta();
                     recetaArrayList.add(receta);
                     modelo.listarReceta(receta);

@@ -27,8 +27,8 @@ public class XQuery {
     protected void Query1(){
     
      try {
-            //Try with different Querys Query_1, Query_2, ...
-            File queryFile = new File("Query_1.xqy"); //
+          
+            File queryFile = new File("./files/XQuery/Query_2.xqy"); 
 
             XQDataSource xqjd = new SaxonXQDataSource();
             XQConnection xqjc = xqjd.getConnection();

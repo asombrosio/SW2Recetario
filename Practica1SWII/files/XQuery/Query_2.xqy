@@ -1,4 +1,4 @@
-for $x in doc("Biblioteca.xml")/Biblioteca/libro
-return if ($x/@categoria="Children")
-then <child>{data($x/titulo)}</child>
-else <adult>{data($x/titulo)}</adult>
+for $x in doc("prueba.xml")/Recetario/receta
+return if ($x/@dificultad="Facil")
+then <Prueba con este>{data($x/nombre)}</Prueba con este>
+else <aun no>{data($x/nombre)}</aun no>
