@@ -100,29 +100,45 @@ public class Controlador {
                     // Escribir sentencia Xpath y ejecutarla
                     break;
                 case 8:
-                    // Consulat xQuery a la Agenda
-                    XQ.Query1();
+                    // Consulat xQuery 
+                    XQ.buscarRecetasNovatos();
                     break;
                 case 9:
+                    // Consulat xQuery 
+                   XQ.listarRecetas();
+                    break;
+                case 10:
+                    // Consulat xQuery
+                    
+                    break;
+                case 11:
+                    // Consulat xQuery 
+                    
+                    break;
+                case 12:
+                    // Consulat xQuery a la Agenda
+                  
+                    break;
+                case 13:
                     // Añadir Agenda
                     
                     recetario=co.crearRecetario(recetaArrayList);
                     modelo.listarRecetario(recetario);
                     break;
-                case 10:
+                case 14:
                   
                     receta=co.crearReceta();
                     recetaArrayList.add(receta);
                     modelo.listarReceta(receta);
                     // Añadir Persona
                     break;
-                 case 11:
+                 case 15:
                     // Listar recetas en caliente
                      for(Receta ele:recetaArrayList){
                          System.out.println(ele.getNombre());
                     }
                     break;
-                  case 12:
+                  case 16:
                        // Listar recetas en agenda
                       modelo.listarRecetario(recetario);
                    
