@@ -5,10 +5,6 @@
  */
 package Controlador;
 
-/**
- *
- * @author darth
- */
 import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -23,41 +19,66 @@ import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
 
 import org.w3c.dom.Document;
+import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
+
+/**
+ *
+ * @author darth
+ */
+
+
+
+
 public class Xpath {
     
-    File xmlFile = new File("Recetario.xml");
+    File xmlFile = new File("./files/xml/Recetario.xml");
     
-    //Mostrar todos los receta
+    //Mostrar todos las receta
     String expressionXPath = "//receta";
-    
-     try {
-            //Carga del documento xml
-            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-            DocumentBuilder builder = factory.newDocumentBuilder();
-            Document documento = builder.parse(xmlFile);
-            
-            //preparacion de xpath
-            XPath xpath = XPathFactory.newInstance().newXPath();
-            
-            //consultas
-            NodeList nodos = (NodeList) xpath.evaluate(expressionXPath,documento,XPathConstants.NODESET);
-            //Imprime solo categoria de libros resultado
-            for (int i = 0; i < nodos.getLength(); i++) {
-                System.out.println(nodos.item(i).getNodeName() + " : " +
-                        + nodos.item(i)).getAttributes().getNamedItem("nombre"));
-
+   
+        public void XpathRecetas () {
+            try {
+                //Carga del documento xml
+                DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+                DocumentBuilder builder = factory.newDocumentBuilder();
+                Document doc = builder.parse(xmlFile);
+                
+                // Preparación de xpath
+                XPath xpath = XPathFactory.newInstance().newXPath();
+                
+                //Consultas
+                NodeList nodos = (NodeList) xpath.evaluate(expressionXPath, doc, XPathConstants.NODESET);
+                
+                
+                //Imprime solo categoria de recetas resultadas
+                for (int i=0;i<nodos.getLength();i++){
+                    System.out.println(nodos.item(i).getNodeName()+" : " +
+                        nodos.item(i).getAttributes().getNamedItem("nombre"));
+                }
+            } catch (ParserConfigurationException ex) {
+            Logger.getLogger(Xpath.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SAXException ex) {
+            Logger.getLogger(Xpath.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+            Logger.getLogger(Xpath.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (XPathExpressionException ex) {
+            Logger.getLogger(Xpath.class.getName()).log(Level.SEVERE, null, ex);
             }
-
-        } catch (SAXException ex) {
-            Logger.getLogger(Xpath.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(Xpath.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (XPathExpressionException ex) {
-            Logger.getLogger(Xpath.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ParserConfigurationException ex) {
-            Logger.getLogger(Xpath.class.getName()).log(Level.SEVERE, null, ex);
+     
         }
-}
+    }
+  	
+		
+                
+ 		
+
+		
+        
+   
+
+
+ 
+
