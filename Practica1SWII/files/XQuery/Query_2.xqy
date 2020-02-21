@@ -1,4 +1,4 @@
-for $x in doc("prueba.xml")/Recetario/receta
+for $x in doc("./files/xml/prueba.xml")/Recetario/recetas/recetas
 return if ($x/@dificultad="Facil")
-then <Prueba con este>{data($x/nombre)}</Prueba con este>
-else <aun no>{data($x/nombre)}</aun no>
+then <Posible>{data($x/nombre)}</Posible>
+else <Inviable>{data($x/nombre)}</Inviable>

@@ -40,7 +40,10 @@ public class XQuery {
             }
             XQPreparedExpression exp = xqjc.prepareExpression(inputStream);
             XQResultSequence result = exp.executeQuery();
+            
+
             while (result.next()) {
+                
                 System.out.println(result.getItemAsString(null));
             }
             result.close();
