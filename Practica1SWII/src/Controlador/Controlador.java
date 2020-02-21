@@ -113,7 +113,8 @@ public class Controlador {
                     break;
                 case 11:
                     // Consulat xQuery 
-                    
+                    modelo.crearHTML(XQ.creadorDeHTML());
+                  
                     break;
                 case 12:
                     // Consulat xQuery a la Agenda

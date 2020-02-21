@@ -10,6 +10,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.xml.xquery.XQConnection;
@@ -23,7 +24,7 @@ import javax.xml.xquery.XQResultSequence;
  * @author DarVVolf
  */
 public class XQuery {
-    
+    ArrayList <String> queryResult =new ArrayList();
     protected void buscarRecetasNovatos(){
     
      try {
@@ -116,5 +117,36 @@ public class XQuery {
             Logger.getLogger(XQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
     
+    }
+       protected ArrayList creadorDeHTML(){
+    
+     try {
+          
+            File queryFile = new File("./files/XQuery/Query_3.xqy"); 
+
+            XQDataSource xqjd = new SaxonXQDataSource();
+            XQConnection xqjc = xqjd.getConnection();
+            InputStream inputStream = null;
+            try {
+                inputStream = new FileInputStream(queryFile);
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(XQuery.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            XQPreparedExpression exp = xqjc.prepareExpression(inputStream);
+            XQResultSequence result = exp.executeQuery();
+            
+
+            while (result.next()) {
+                queryResult.add(result.getItemAsString(null));
+                //System.out.println(result.getItemAsString(null));
+            }
+            result.close();
+            exp.close();
+            xqjc.close();
+
+        } catch (XQException ex) {
+            Logger.getLogger(XQuery.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            return queryResult;
     }
 }
