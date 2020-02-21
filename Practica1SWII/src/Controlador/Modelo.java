@@ -62,12 +62,14 @@ public class Modelo {
     protected void crearHTML(ArrayList<String> array) {
         FileWriter fichero = null;
         PrintWriter pw = null;
+        int valor=0;
         try {
             fichero = new FileWriter("./files/html/prueba.html");
             pw = new PrintWriter(fichero);
 
             for (String ele : array) {
-                pw.println(array);
+                
+                pw.println(ele);
             }
             fichero.close();
 
