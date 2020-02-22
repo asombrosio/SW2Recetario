@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 
-<!DOCTYPE Empleado SYSTEM "../dtd/recetario.dtd">
-
 <Recetario>
     <nombre>Libro inicial</nombre>
     <recetas>
