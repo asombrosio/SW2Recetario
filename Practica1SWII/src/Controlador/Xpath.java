@@ -37,7 +37,16 @@ public class Xpath {
     File xmlFile = new File("./files/xml/Recetario.xml");
     
     //Mostrar todos las receta
-    String expressionXPath = "//receta";
+    String expressionXPath = "//recetas";
+    
+    //Mostrar todos los autores
+        //String expressionXPath = "//dificultad";
+        
+        //Mostrar todos los libros cuyo precio es menor que 30
+        //String expressionXPath = "/Biblioteca/receta[precio < 15.0]";
+        
+        //Mostrar las recetas con dificultadmenor que 2 y precio mayor que 30
+        //String expressionXPath = "/Recetario/receta[@dificultad < 2 and precio >30]";
    
         public void XpathRecetas () {
             try {
