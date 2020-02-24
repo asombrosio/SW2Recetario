@@ -1,13 +1,14 @@
 <html>
 <body>
 
-<h1>Bookstore</h1>
+<h1>Recetario</h1>
 
 <ul>
 {
-for $x in doc("Biblioteca.xml")/Biblioteca/libro
-order by $x/titulo
-return <li class="{data($x/@categoria)}">{data($x/titulo)}</li>
+for $x in 
+doc("./files/xml/prueba.xml")/Recetario/recetas/recetas
+order by $x/nombre
+return <li class="{data($x/@dificultad)}">{data($x/nombre)}</li>
 }
 </ul>
 

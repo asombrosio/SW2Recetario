@@ -7,8 +7,13 @@ package Controlador;
 
 import Recetarios.Receta;
 import Recetarios.Recetario;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -53,6 +58,25 @@ public class Modelo {
         }
         System.out.println("No existe la receta");
         return null;
+    }
+    protected void crearHTML(ArrayList<String> array) {
+        FileWriter fichero = null;
+        PrintWriter pw = null;
+        int valor=0;
+        try {
+            fichero = new FileWriter("./files/html/prueba.html");
+            pw = new PrintWriter(fichero);
+
+            for (String ele : array) {
+                
+                pw.println(ele);
+            }
+            fichero.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
 }

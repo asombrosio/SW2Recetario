@@ -3,8 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/darth/OneDrive/Documentos/GitHub/SW2Recetario/Practica1SWII/src/Controlador/XQuery.java</file>
             <file>file:/C:/Users/darth/OneDrive/Documentos/GitHub/SW2Recetario/Practica1SWII/src/Controlador/Xpath.java</file>
+=======
+            <file>file:/C:/Users/david/Documents/GitHub/SW2Recetario/Practica1SWII/src/Controlador/Controlador.java</file>
+            <file>file:/C:/Users/david/Documents/GitHub/SW2Recetario/Practica1SWII/src/Controlador/ValidarDTD.java</file>
+            <file>file:/C:/Users/david/Documents/GitHub/SW2Recetario/Practica1SWII/src/Controlador/CustomErrorHandler.java</file>
+            <file>file:/C:/Users/david/Documents/GitHub/SW2Recetario/Practica1SWII/src/principal/Main.java</file>
+>>>>>>> f61e32ced9a65b0abbbbee525c222f1b21d8e573
         </group>
     </open-files>
 </project-private>
