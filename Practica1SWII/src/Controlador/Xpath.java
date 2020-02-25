@@ -62,7 +62,7 @@ public class Xpath {
                 NodeList nodos = (NodeList) xpath.evaluate(expressionXPath, doc, XPathConstants.NODESET);
                 
                 
-                //Imprime solo categoria de recetas resultadas
+                //Imprime solo categoria de recetas resultantes
                 for (int i=0;i<nodos.getLength();i++){
                     System.out.println(nodos.item(i).getNodeName()+" : " +
                         nodos.item(i).getAttributes().getNamedItem("nombre"));

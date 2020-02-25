@@ -87,7 +87,7 @@ public class XQuery {
         }
     
     }
-      protected void verRecetasConPrecioMayorA2€(){
+      protected void verRecetasConPrecioMayorA2euros(){
     
      try {
           
