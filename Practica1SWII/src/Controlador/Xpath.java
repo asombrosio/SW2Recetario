@@ -30,8 +30,6 @@ import org.xml.sax.SAXException;
  */
 
 
-
-
 public class Xpath {
     
     File xmlFile = new File("./files/xml/Recetario.xml");
@@ -141,8 +139,8 @@ public class Xpath {
         
         public void XpathMixto () {
             
-            //Mostrar las recetas con dificultad menor que 2 y precio mayor que 18
-            String expressionXPath = "/Recetario/receta[@dificultad < 2 and precio > 18]";
+            //Mostrar las recetas con dificultad menor que Facil y precio mayor que 10
+            String expressionXPath = "/Recetario/receta[@dificultad < 2 and precio > 10]";
             try {
                 //Carga del documento xml
                 DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
