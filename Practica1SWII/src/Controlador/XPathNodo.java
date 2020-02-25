@@ -30,7 +30,7 @@ import org.xml.sax.SAXException;
  */
 
 
-public class Xpath {
+public class XPathNodo {
     
     File xmlFile = new File("./files/xml/Recetario.xml");
     
@@ -58,13 +58,13 @@ public class Xpath {
                         nodos.item(i).getAttributes().getNamedItem("nombre"));
                 }
             } catch (ParserConfigurationException ex) {
-            Logger.getLogger(Xpath.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(XPathNodo.class.getName()).log(Level.SEVERE, null, ex);
             } catch (SAXException ex) {
-            Logger.getLogger(Xpath.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(XPathNodo.class.getName()).log(Level.SEVERE, null, ex);
             } catch (IOException ex) {
-            Logger.getLogger(Xpath.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(XPathNodo.class.getName()).log(Level.SEVERE, null, ex);
             } catch (XPathExpressionException ex) {
-            Logger.getLogger(Xpath.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(XPathNodo.class.getName()).log(Level.SEVERE, null, ex);
             }
      
         }
@@ -92,13 +92,13 @@ public class Xpath {
                         nodos.item(i).getAttributes().getNamedItem("nombre"));
                 }
             } catch (ParserConfigurationException ex) {
-            Logger.getLogger(Xpath.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(XPathNodo.class.getName()).log(Level.SEVERE, null, ex);
             } catch (SAXException ex) {
-            Logger.getLogger(Xpath.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(XPathNodo.class.getName()).log(Level.SEVERE, null, ex);
             } catch (IOException ex) {
-            Logger.getLogger(Xpath.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(XPathNodo.class.getName()).log(Level.SEVERE, null, ex);
             } catch (XPathExpressionException ex) {
-            Logger.getLogger(Xpath.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(XPathNodo.class.getName()).log(Level.SEVERE, null, ex);
             }
      
         }
@@ -126,13 +126,13 @@ public class Xpath {
                         nodos.item(i).getAttributes().getNamedItem("nombre"));
                 }
             } catch (ParserConfigurationException ex) {
-            Logger.getLogger(Xpath.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(XPathNodo.class.getName()).log(Level.SEVERE, null, ex);
             } catch (SAXException ex) {
-            Logger.getLogger(Xpath.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(XPathNodo.class.getName()).log(Level.SEVERE, null, ex);
             } catch (IOException ex) {
-            Logger.getLogger(Xpath.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(XPathNodo.class.getName()).log(Level.SEVERE, null, ex);
             } catch (XPathExpressionException ex) {
-            Logger.getLogger(Xpath.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(XPathNodo.class.getName()).log(Level.SEVERE, null, ex);
             }
      
         }
@@ -160,13 +160,13 @@ public class Xpath {
                         nodos.item(i).getAttributes().getNamedItem("nombre"));
                 }
             } catch (ParserConfigurationException ex) {
-            Logger.getLogger(Xpath.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(XPathNodo.class.getName()).log(Level.SEVERE, null, ex);
             } catch (SAXException ex) {
-            Logger.getLogger(Xpath.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(XPathNodo.class.getName()).log(Level.SEVERE, null, ex);
             } catch (IOException ex) {
-            Logger.getLogger(Xpath.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(XPathNodo.class.getName()).log(Level.SEVERE, null, ex);
             } catch (XPathExpressionException ex) {
-            Logger.getLogger(Xpath.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(XPathNodo.class.getName()).log(Level.SEVERE, null, ex);
             }
      
         }
