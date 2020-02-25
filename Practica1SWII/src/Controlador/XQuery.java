@@ -25,11 +25,13 @@ import javax.xml.xquery.XQResultSequence;
  */
 public class XQuery {
     ArrayList <String> queryResult =new ArrayList();
-    protected void buscarRecetasNovatos(){
+    
+    
+    private ArrayList cargarXquery(String dirreccionFichero){
     
      try {
           
-            File queryFile = new File("./files/XQuery/Query_2.xqy"); 
+            File queryFile = new File(dirreccionFichero); 
 
             XQDataSource xqjd = new SaxonXQDataSource();
             XQConnection xqjc = xqjd.getConnection();
@@ -54,99 +56,23 @@ public class XQuery {
         } catch (XQException ex) {
             Logger.getLogger(XQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
+    return queryResult;
+    
+    }
+    protected void buscarRecetasNovatos(){
+    cargarXquery("./files/XQuery/Query_2.xqy");
     
     }
      protected void listarRecetas(){
+    cargarXquery("./files/XQuery/Query_1.xqy");
     
-     try {
-          
-            File queryFile = new File("./files/XQuery/Query_1.xqy"); 
-
-            XQDataSource xqjd = new SaxonXQDataSource();
-            XQConnection xqjc = xqjd.getConnection();
-            InputStream inputStream = null;
-            try {
-                inputStream = new FileInputStream(queryFile);
-            } catch (FileNotFoundException ex) {
-                Logger.getLogger(XQuery.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            XQPreparedExpression exp = xqjc.prepareExpression(inputStream);
-            XQResultSequence result = exp.executeQuery();
-            
-
-            while (result.next()) {
-                
-                System.out.println(result.getItemAsString(null));
-            }
-            result.close();
-            exp.close();
-            xqjc.close();
-
-        } catch (XQException ex) {
-            Logger.getLogger(XQuery.class.getName()).log(Level.SEVERE, null, ex);
-        }
     
     }
       protected void verRecetasConPrecioMayorA2euros(){
-    
-     try {
-          
-            File queryFile = new File("./files/XQuery/Query.xqy"); 
-
-            XQDataSource xqjd = new SaxonXQDataSource();
-            XQConnection xqjc = xqjd.getConnection();
-            InputStream inputStream = null;
-            try {
-                inputStream = new FileInputStream(queryFile);
-            } catch (FileNotFoundException ex) {
-                Logger.getLogger(XQuery.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            XQPreparedExpression exp = xqjc.prepareExpression(inputStream);
-            XQResultSequence result = exp.executeQuery();
-            
-
-            while (result.next()) {
-                
-                System.out.println(result.getItemAsString(null));
-            }
-            result.close();
-            exp.close();
-            xqjc.close();
-
-        } catch (XQException ex) {
-            Logger.getLogger(XQuery.class.getName()).log(Level.SEVERE, null, ex);
-        }
+    cargarXquery("./files/XQuery/Query.xqy");
     
     }
        protected ArrayList creadorDeHTML(){
-    
-     try {
-          
-            File queryFile = new File("./files/XQuery/Query_3.xqy"); 
-
-            XQDataSource xqjd = new SaxonXQDataSource();
-            XQConnection xqjc = xqjd.getConnection();
-            InputStream inputStream = null;
-            try {
-                inputStream = new FileInputStream(queryFile);
-            } catch (FileNotFoundException ex) {
-                Logger.getLogger(XQuery.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            XQPreparedExpression exp = xqjc.prepareExpression(inputStream);
-            XQResultSequence result = exp.executeQuery();
-            
-
-            while (result.next()) {
-                queryResult.add(result.getItemAsString(null));
-                //System.out.println(result.getItemAsString(null));
-            }
-            result.close();
-            exp.close();
-            xqjc.close();
-
-        } catch (XQException ex) {
-            Logger.getLogger(XQuery.class.getName()).log(Level.SEVERE, null, ex);
-        }
-            return queryResult;
-    }
+    return cargarXquery("./files/XQuery/Query_3.xqy");
+       }
 }
