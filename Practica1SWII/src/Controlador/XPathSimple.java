@@ -38,8 +38,8 @@ public class XPathSimple {
             Document doc = builder.parse(xmlFile);
             XPath xpath = XPathFactory.newInstance().newXPath();
             //Evaluate expression
-            Double result = (Double) xpath.evaluate(expressionXPath, doc, XPathConstants.NUMBER);
-            System.out.println("El  numero total de recetas es : " + result);
+            Double resultado = (Double) xpath.evaluate(expressionXPath, doc, XPathConstants.NUMBER);
+            System.out.println("El  numero total de recetas es : " + resultado);
         } catch (SAXException ex) {
             Logger.getLogger(XPathSimple.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
@@ -92,8 +92,8 @@ public class XPathSimple {
             Document doc = builder.parse(xmlFile);
             XPath xpath = XPathFactory.newInstance().newXPath();
             //Evaluate expression
-            Double result = (Double) xpath.evaluate(expressionXPath, doc, XPathConstants.NUMBER);
-            System.out.println("El  numero total de recetas es : " + result);
+            Double resultado = (Double) xpath.evaluate(expressionXPath, doc, XPathConstants.NUMBER);
+            System.out.println("El  numero total de recetas es : " + resultado);
         } catch (SAXException ex) {
             Logger.getLogger(XPathSimple.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
