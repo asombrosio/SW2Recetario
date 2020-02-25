@@ -9,17 +9,10 @@ import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.text.Document;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
-import jdk.internal.org.xml.sax.ErrorHandler;
-import jdk.internal.org.xml.sax.InputSource;
-import jdk.internal.org.xml.sax.XMLReader;
 import org.xml.sax.SAXException;
-import org.xml.sax.SAXParseException;
 
 /**
  *
