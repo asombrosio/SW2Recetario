@@ -50,8 +50,9 @@ public class Modelo {
     }
 
     protected Receta buscarReceta(String nombreReceta, Recetario recetario) {
-
+       
         for (Receta ele : recetario.getRecetas()) {
+              System.out.println("paso"+ ele.getNombre());
             if (ele.getNombre().equals(nombreReceta)) {
                 return ele;
             }
