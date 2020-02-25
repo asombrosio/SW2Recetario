@@ -139,8 +139,8 @@ public class XPathNodo {
         
         public void XpathMixto () {
             
-            //Mostrar las recetas con dificultad menor que Facil y precio mayor que 10
-            String expressionXPath = "/Recetario/receta[@dificultad < 2 and precio > 10]";
+            //Mostrar las recetas con dificultad menor que medio y precio mayor que 10
+            String expressionXPath = "/Recetario/receta[ dificultad < 2 and precio > 10]";
             try {
                 //Carga del documento xml
                 DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
