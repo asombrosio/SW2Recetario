@@ -52,7 +52,9 @@ public class Controlador {
 
         while(opcion != salir){
             System.out.println("Elige una opcion, pulsa 0 para salir");
-            System.out.println("1= Importar recetario, 2=Exportar recetario");
+            System.out.println("1= Importar recetario, 2=Exportar recetario, 3=Exportar Receta, 4=Importar Receta, 5=Validar DTD, 6=Validar XSD 7=XPath mostar recetas"
+                    + "8=Xpath *, 9=Xpath muestrarecetas cuyo precio <15 10=XPath que muestra las recetas con dificultad Facil y que el precio sea menor a 15 euros"
+                    + "");
             opcion = Integer.parseInt(scanner.nextLine());
             switch(opcion){
                  case 0:
