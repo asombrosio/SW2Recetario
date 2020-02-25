@@ -36,19 +36,11 @@ public class Xpath {
     
     File xmlFile = new File("./files/xml/Recetario.xml");
     
-    //Mostrar todos las recetas
-    String expressionXPath = "//recetas";
-    
-    //Mostrar todos los precios
-        //String expressionXPath = "//precio";
-        
-        //Mostrar todos los libros cuyo precio es menor que 30
-        //String expressionXPath = "/Biblioteca/receta[precio < 15.0]";
-        
-        //Mostrar las recetas con dificultadmenor que 2 y precio mayor que 30
-        //String expressionXPath = "/Recetario/receta[@dificultad < 2 and precio >30]";
    
         public void XpathRecetas () {
+            
+            //Mostrar todos las recetas
+            String expressionXPath = "//recetas";
             try {
                 //Carga del documento xml
                 DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -78,6 +70,109 @@ public class Xpath {
             }
      
         }
+        
+        public void XpathPrecios () {
+            
+            //Mostrar todos los precios
+            String expressionXPath = "//precio";
+            try {
+                //Carga del documento xml
+                DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+                DocumentBuilder builder = factory.newDocumentBuilder();
+                Document doc = builder.parse(xmlFile);
+                
+                // Preparación de xpath
+                XPath xpath = XPathFactory.newInstance().newXPath();
+                
+                //Consultas
+                NodeList nodos = (NodeList) xpath.evaluate(expressionXPath, doc, XPathConstants.NODESET);
+                
+                
+                //Imprime solo categoria de recetas resultantes
+                for (int i=0;i<nodos.getLength();i++){
+                    System.out.println(nodos.item(i).getNodeName()+" : " +
+                        nodos.item(i).getAttributes().getNamedItem("nombre"));
+                }
+            } catch (ParserConfigurationException ex) {
+            Logger.getLogger(Xpath.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SAXException ex) {
+            Logger.getLogger(Xpath.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+            Logger.getLogger(Xpath.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (XPathExpressionException ex) {
+            Logger.getLogger(Xpath.class.getName()).log(Level.SEVERE, null, ex);
+            }
+     
+        }
+        
+        public void XpathPrecioMenor15 () {
+            
+            //Mostrar todas las recetas cuyo precio es menor que 15
+            String expressionXPath = "/Recetario/receta[precio < 15.0]";
+            try {
+                //Carga del documento xml
+                DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+                DocumentBuilder builder = factory.newDocumentBuilder();
+                Document doc = builder.parse(xmlFile);
+                
+                // Preparación de xpath
+                XPath xpath = XPathFactory.newInstance().newXPath();
+                
+                //Consultas
+                NodeList nodos = (NodeList) xpath.evaluate(expressionXPath, doc, XPathConstants.NODESET);
+                
+                
+                //Imprime solo categoria de recetas resultantes
+                for (int i=0;i<nodos.getLength();i++){
+                    System.out.println(nodos.item(i).getNodeName()+" : " +
+                        nodos.item(i).getAttributes().getNamedItem("nombre"));
+                }
+            } catch (ParserConfigurationException ex) {
+            Logger.getLogger(Xpath.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SAXException ex) {
+            Logger.getLogger(Xpath.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+            Logger.getLogger(Xpath.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (XPathExpressionException ex) {
+            Logger.getLogger(Xpath.class.getName()).log(Level.SEVERE, null, ex);
+            }
+     
+        }
+        
+        public void XpathMixto () {
+            
+            //Mostrar las recetas con dificultad menor que 2 y precio mayor que 18
+            String expressionXPath = "/Recetario/receta[@dificultad < 2 and precio > 18]";
+            try {
+                //Carga del documento xml
+                DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+                DocumentBuilder builder = factory.newDocumentBuilder();
+                Document doc = builder.parse(xmlFile);
+                
+                // Preparación de xpath
+                XPath xpath = XPathFactory.newInstance().newXPath();
+                
+                //Consultas
+                NodeList nodos = (NodeList) xpath.evaluate(expressionXPath, doc, XPathConstants.NODESET);
+                
+                
+                //Imprime solo categoria de recetas resultantes
+                for (int i=0;i<nodos.getLength();i++){
+                    System.out.println(nodos.item(i).getNodeName()+" : " +
+                        nodos.item(i).getAttributes().getNamedItem("nombre"));
+                }
+            } catch (ParserConfigurationException ex) {
+            Logger.getLogger(Xpath.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SAXException ex) {
+            Logger.getLogger(Xpath.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+            Logger.getLogger(Xpath.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (XPathExpressionException ex) {
+            Logger.getLogger(Xpath.class.getName()).log(Level.SEVERE, null, ex);
+            }
+     
+        }
+        
     }
   	
 		
