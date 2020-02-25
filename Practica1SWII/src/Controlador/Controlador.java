@@ -112,7 +112,7 @@ public class Controlador {
                     break;
                 case 10:
                     // Consulat xQuery
-                    XQ.verRecetasConPrecioMayorA2€();
+                    XQ.verRecetasConPrecioMayorA2euros();
                     break;
                 case 11:
                     // Consulat xQuery 
