@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Recetario>
+    <nombre>librooo</nombre>
+    <recetas>
+        <recetas dificultad="Facil">
+            <nombre>bocadillo</nombre>
+            <ingredienete>
+                <ingredienete>pan</ingredienete>
+                <ingredienete>queso</ingredienete>
+            </ingredienete>
+            <precio>3.0</precio>
+        </recetas>
+        <recetas dificultad="Dificil">
+            <nombre>filete</nombre>
+            <ingredienete>
+                <ingredienete>carne</ingredienete>
+                <ingredienete>sal</ingredienete>
+            </ingredienete>
+            <precio>1.0</precio>
+        </recetas>
+    </recetas>
+    <precio>10.0</precio>
+</Recetario>

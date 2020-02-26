@@ -22,12 +22,15 @@ public class Controlador {
     Modelo modelo = new Modelo();
     CreadorObjetos co= new CreadorObjetos();
     XQuery XQ= new XQuery();
-    
+     ArrayList<Receta> recetaArrayList = new ArrayList();
+     
+          Receta receta;
+     Recetario recetario = new Recetario();
     private void crearXMLRecetario(String nombreFichero, Recetario recetario){
        mrs.crearXMLRecetario(nombreFichero, recetario);  
     }
      private void crearXMLReceta(String nombreReceta, String nombreFichero){
-            mrs.crearXMLReceta(nombreFichero,modelo.buscarReceta(nombreReceta,crearRecetario())); 
+            mrs.crearXMLReceta(nombreFichero,modelo.buscarReceta(nombreReceta,recetario)); 
     }
     private Receta importarObjetoReceta(String nombreFichero){  
         Receta receta = mrs.importarObjetoReceta(nombreFichero);
@@ -37,10 +40,7 @@ public class Controlador {
         Recetario recetario = mrs.importarObjetoRecetario(nombreFichero);
         return recetario;
     }
-    private Recetario crearRecetario (){
-    return co.crearRecetario1();
     
-    }
     
     
     public void Menu(){
@@ -48,12 +48,13 @@ public class Controlador {
     Integer opcion = -1;
     Integer salir = 0;
      String respuesta ;
-     ArrayList<Receta> recetaArrayList = new ArrayList();
-     Receta receta;
-     Recetario recetario = new Recetario();
+    
+
         while(opcion != salir){
             System.out.println("Elige una opcion, pulsa 0 para salir");
-            System.out.println("1= Importar recetario, 2=Exportar recetario");
+            System.out.println("1= Importar recetario, 2=Exportar recetario, 3=Exportar Receta, 4=Importar Receta, 5=Validar DTD, 6=Validar XSD 7=XPath mostar recetas"
+                    + "8=Xpath *, 9=Xpath muestrarecetas cuyo precio <15 10=XPath que muestra las recetas con dificultad Facil y que el precio sea menor a 15 euros"
+                    + "");
             opcion = Integer.parseInt(scanner.nextLine());
             switch(opcion){
                  case 0:
@@ -76,7 +77,8 @@ public class Controlador {
                 case 3:
                      System.out.println("En esta opcion creará el nombre del xml de la receta.");
                      System.out.println("Introduce el nombre de la receta a exportar");
-                     respuesta = scanner.nextLine();      
+                     respuesta = scanner.nextLine();
+                    // System.out.println(recetario.getNombre());
                      crearXMLReceta(respuesta,respuesta+".xml");
                              
                     // crearXMLReceta(respuesta+ ".xml",);
@@ -112,7 +114,7 @@ public class Controlador {
                     break;
                 case 10:
                     // Consulat xQuery
-                    XQ.verRecetasConPrecioMayorA2€();
+                    XQ.verRecetasConPrecioMayorA2euros();
                     break;
                 case 11:
                     // Consulat xQuery 
