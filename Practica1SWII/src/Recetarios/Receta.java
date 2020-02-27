@@ -28,7 +28,7 @@ public class Receta implements Serializable {
     @XmlAttribute
     private String dificultad;
     @XmlElementWrapper
-    private ArrayList<String> ingrediente = new ArrayList<>();
+    private ArrayList<String> ingredienete = new ArrayList<>();
     @XmlElement
     private Double precio;
     
@@ -53,17 +53,17 @@ public class Receta implements Serializable {
     }
 
     /**
-     * @return the ingrediente
+     * @return the ingredienete
      */
-    public ArrayList<String> getIngrediente() {
-        return ingrediente;
+    public ArrayList<String> getIngredienete() {
+        return ingredienete;
     }
 
     /**
-     * @param ingrediente the ingrediente to set
+     * @param ingredienete the ingredienete to set
      */
-    public void setIngrediente(ArrayList<String> ingrediente) {
-        this.ingrediente = ingrediente;
+    public void setIngredienete(ArrayList<String> ingredienete) {
+        this.ingredienete = ingredienete;
     }
 
     /**

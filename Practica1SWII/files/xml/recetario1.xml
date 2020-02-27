@@ -1,37 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Recetario>
-    <nombre>Recetario1</nombre>
+    <nombre>librooo</nombre>
     <recetas>
+        <recetas dificultad="Facil">
+            <nombre>bocadillo</nombre>
+            <ingredienete>
+                <ingredienete>pan</ingredienete>
+                <ingredienete>queso</ingredienete>
+            </ingredienete>
+            <precio>3.0</precio>
+        </recetas>
         <recetas dificultad="Dificil">
-            <nombre>Lasanna</nombre>
-            <ingrediente>
-                <ingrediente>Tomate</ingrediente>
-                <ingrediente>Carne</ingrediente>
-                <ingrediente>Pasta</ingrediente>
-                <ingrediente>Queso</ingrediente>
-                <ingrediente>Aceite</ingrediente>
-                <ingrediente>Sal</ingrediente>
-                <ingrediente>Bechamel</ingrediente>
-            </ingrediente>
-            <precio>12.0</precio>
-        </recetas>
-        <recetas dificultad="Facil">
-            <nombre>Sandwich de pavo</nombre>
-            <ingrediente>
-                <ingrediente>Pavo</ingrediente>
-                <ingrediente>Pan</ingrediente>
-            </ingrediente>
-            <precio>1.5</precio>
-        </recetas>
-        <recetas dificultad="Facil">
-            <nombre>Filete de ternera</nombre>
-            <ingrediente>
-                <ingrediente>Carne de ternera</ingrediente>
-                <ingrediente>Aceite</ingrediente>
-                <ingrediente>Sal</ingrediente>
-            </ingrediente>
+            <nombre>filete</nombre>
+            <ingredienete>
+                <ingredienete>carne</ingredienete>
+                <ingredienete>sal</ingredienete>
+            </ingredienete>
             <precio>1.0</precio>
         </recetas>
     </recetas>
-    <precio>20.0</precio>
+    <precio>10.0</precio>
 </Recetario>
