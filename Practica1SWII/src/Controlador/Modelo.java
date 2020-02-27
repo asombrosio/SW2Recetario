@@ -29,7 +29,7 @@ public class Modelo {
             System.out.println("Este es el nombre de la receta elegida :" + receta.getNombre());
             System.out.println("Este es la dificultad de la receta elegida :" + receta.getDificultad());
             System.out.println("Estos son los ingredientes:");
-            for (String elemeto : receta.getIngredienete()) {
+            for (String elemeto : receta.getIngrediente()) {
                 System.out.println(elemeto);
             }
             System.out.println("El precio de la receta es :" + receta.getPrecio());

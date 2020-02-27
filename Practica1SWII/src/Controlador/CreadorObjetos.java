@@ -33,7 +33,7 @@ public class CreadorObjetos {
             }
 
         }
-        receta.setIngredienete(ingredientes);
+        receta.setIngrediente(ingredientes);
         System.out.println("Introduce el precio de la receta");
         receta.setPrecio(Double.parseDouble(scanner.nextLine()));
 
@@ -59,44 +59,4 @@ public class CreadorObjetos {
         }
         return recetario;
     }
-
-    //por defecto
-//    protected Recetario crearRecetario1() {
-//        Recetario recetario = new Recetario();
-//        recetario.setNombre("libro1");
-//        ArrayList<Receta> recetas = new ArrayList<Receta>();
-//        recetas.add(crearReceta1(recetario.getNombre()));
-//        recetas.add(crearReceta2(recetario.getNombre()));
-//        recetario.setRecetas(recetas);
-//        recetario.setPrecio(100.00);
-//        return recetario;
-//    }
-//
-//    protected Receta crearReceta1(String nombreRecetario) {
-//        Receta receta = new Receta();
-//        receta.setNombre("Canelones");
-//        receta.setDificultad(nombreRecetario);//sele adjunta como referencia de su recetario el mismo nombre de este
-//        ArrayList<String> ingredientes = new ArrayList<String>();
-//        ingredientes.add("Pasta");
-//        ingredientes.add("Bechamel");
-//        ingredientes.add("Carne");
-//        ingredientes.add("Tomate frito");
-//        receta.setIngredienete(ingredientes);
-//        receta.setPrecio(15.56);
-//        return receta;
-//    }
-//
-//    protected Receta crearReceta2(String nombreRecetario) {
-//        Receta receta = new Receta();
-//        receta.setNombre("Ensaladilla rusa");
-//        receta.setDificultad(nombreRecetario);
-//        ArrayList<String> ingredientes = new ArrayList<String>();
-//        ingredientes.add("Patatas");
-//        ingredientes.add("Zanahorias");
-//        ingredientes.add("Aceitunas");
-//        ingredientes.add("AMayonesa");
-//        receta.setIngredienete(ingredientes);
-//        receta.setPrecio(12.56);
-//        return receta;
-//    }
 }
