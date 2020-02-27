@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0"?>
+<!DOCTYPE Recetario SYSTEM "../dtd/recetario.dtd">
 <Recetario>
     <nombre>Recetario1</nombre>
     <recetas>
