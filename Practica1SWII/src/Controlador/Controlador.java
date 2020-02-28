@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Controlador;
 
 import Recetarios.Receta;
@@ -52,9 +48,10 @@ public class Controlador {
 
         while(opcion != salir){
             System.out.println("Elige una opcion, pulsa 0 para salir");
-            System.out.println("1= Importar recetario, 2=Exportar recetario, 3=Exportar Receta, 4=Importar Receta, 5=Validar DTD, 6=Validar XSD 7=XPath mostar recetas"
-                    + "8=Xpath *, 9=Xpath muestrarecetas cuyo precio <15 10=XPath que muestra las recetas con dificultad Facil y que el precio sea menor a 15 euros"
-                    + "");
+            System.out.println("1= Importar recetario, 2=Exportar recetario, 3=Exportar Receta, 4=Importar Receta, 5= crea el recetario, 6=crea recetas, 7=Lista recetas en caliente , 8=listar las recetas del recetario");
+            System.out.println("9=Xpath *, 10=Xpath muestra recetas cuyo precio <15 11=XPath que muestra las recetas con dificultad Facil y que el precio sea menor a 15 euros");
+            System.out.println("12=Xquery que dice cuales son las recetas viables para novatos, 13=Xquery que te lista la receta, 13=XQuery que busca las recetas cuyo valor es superior a 2 euros");
+            System.out.println("15= crea un HTML a partir del xml donde lista las recetas,16=Validar DTD, 17=Validar XSD");
             opcion = Integer.parseInt(scanner.nextLine());
             switch(opcion){
                  case 0:
@@ -72,7 +69,12 @@ public class Controlador {
                      //Exportar recetario
                     System.out.println("Introduce el nombre del fichero sin la extensión del recetario");
                      respuesta = scanner.nextLine();
-                     crearXMLRecetario(respuesta+ ".xml",recetario);
+                     if(respuesta.equals("recetarioDTD")!= true){
+                      crearXMLRecetario(respuesta+ ".xml",recetario);
+                     }else{
+                         System.out.println("Ese nombre esta prohibido");
+                     }
+                    
                     break;
                 case 3:
                      System.out.println("En esta opcion creará el nombre del xml de la receta.");
@@ -93,64 +95,74 @@ public class Controlador {
                     modelo.listarReceta(receta);
                     break;
                 case 5:
-                    // Validacion DTD de la agenda
-                    System.out.println("es valido el xml con su dtd"+  vDTD.validarXML( "./files/xml/prueba.xml"));
-                   
-                    break;
-                case 6:
-                    //validar XSD
-                    System.out.println("file.xml es valido con su xsd? "+ vXSD.validarXSD("./files/xsd/recetario.xsd", "./files/xml/prueba.xml"));
-                    break;
-                case 7:
-                    // Escribir sentencia Xpath y ejecutarla
-                    break;
-                case 8:
-                    // Consulat xQuery 
-                    XQ.buscarRecetasNovatos();
-                    break;
-                case 9:
-                    // Consulat xQuery 
-                   XQ.listarRecetas();
-                    break;
-                case 10:
-                    // Consulat xQuery
-                    XQ.verRecetasConPrecioMayorA2euros();
-                    break;
-                case 11:
-                    // Consulat xQuery 
-                    modelo.crearHTML(XQ.creadorDeHTML());
-                  
-                    break;
-                case 12:
-                    // Consulat xQuery a la Agenda
-                  
-                    break;
-                case 13:
-                    // Añadir Agenda
-                    
                     recetario=co.crearRecetario(recetaArrayList);
                     modelo.listarRecetario(recetario);
                     break;
-                case 14:
-                  
+                case 6:
+                     //crear recetas
                     receta=co.crearReceta();
                     recetaArrayList.add(receta);
                     modelo.listarReceta(receta);
-                    // Añadir Persona
                     break;
-                 case 15:
-                    // Listar recetas en caliente
+                case 7:
+                   // Listar recetas en caliente
                      for(Receta ele:recetaArrayList){
                          System.out.println(ele.getNombre());
                     }
                     break;
-                  case 16:
+                case 8:
+                     modelo.listarRecetario(recetario);
+                   
+                   
+                    break;
+                case 9:
+                   
+                  
+                    break;
+                case 10:
+                  
+                   
+                    break;
+                    case 11:
+                  
+                   
+                    break;
+                        case 12:
+                  
+                   
+                    break;
+                case 13:
+                    
+                     XQ.buscarRecetasNovatos();
+                   
+                  
+                    break;
+                case 14:
+                     XQ.listarRecetas();
+                  
+                    break;
+                case 15:
+                    XQ.verRecetasConPrecioMayorA2euros();
+                    
+                    break;
+                case 16:
+                     modelo.crearHTML(XQ.creadorDeHTML());
+                    
+                    break;
+                 case 17:
+                    // Validacion DTD de la agenda
+                    System.out.println("¿Es valido el xml con su dtd? "+  vDTD.validarXML( "./files/xml/recetarioDTD.xml"));
+                   
+                    break;
+                  case 18:
                        // Listar recetas en agenda
-                      modelo.listarRecetario(recetario);
+                      System.out.println("Introduce el nombre del XML a validar sin extension: ");
+                     respuesta = scanner.nextLine();
+                     System.out.println("¿Es valido el xml con su xsd? "+  vXSD.validarXSD("./files/xsd/recetario.xsd", "./files/xml/"+respuesta+".xml"));
                    
                     break;  
                 default: 
-                    System.out.println("Error, introduzca un numero del cero al 10");
+                    System.out.println("Error, introduzca un numero del cero al 17");
                    
             }
         }

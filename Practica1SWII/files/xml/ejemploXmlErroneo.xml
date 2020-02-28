@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Recetario>
+    <nombre>ya</nombre>
+    <recetas>
+        <recetas dificultad="Facil">
+            <nombre>Patatas Fritas</nombre>
+            <ingredienete>
+                <ingredienete>Patatas</ingredienete>
+                <ingredienete>Aceite</ingredienete>
+                <ingredienete>Sal</ingredienete>
+            </ingredienete>
+            <precio>2.0</precio>
+        </recetas>
+        <recetas dificultad="Facil">
+            <nombre>Huevos fritos</nombre>
+            <ingredienete>
+                <ingredienete>Huevos</ingredienete>
+                <ingredienete>Aceite</ingredienete>
+                <ingredienete>Sal</ingredienete>
+            </ingredienete>
+            <precio>1.5</precio>
+        </recetas>
+        <recetas dificultad="Medio">
+            <nombre>Filete de pollo</nombre>
+            <ingredienete>
+                <ingredienete>Pollo entero</ingredienete>
+                <ingredienete>Aceite</ingredienete>
+                <ingredienete>Sal</ingredienete>
+                <ingredienete>Pimienta</ingredienete>
+                <ingredienete>Ajo</ingredienete>
+            </ingredienete>
+            <precio>3.0</precio>
+        </recetas>
+    </recetas>
+    <precio>10.0</precio>
+</Recetario>
