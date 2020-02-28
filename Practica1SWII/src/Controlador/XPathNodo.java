@@ -38,7 +38,7 @@ public class XPathNodo {
         public void XpathRecetas () {
             
             //Mostrar todos las recetas
-            String expressionXPath = "//recetas";
+            String expressionXPath = "//recetas/recetas";
             try {
                 //Carga del documento xml
                 DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -71,7 +71,7 @@ public class XPathNodo {
         
         public void XpathNombresRecetas () {
             
-            //Mostrar todos los precios
+            //Mostrar todos los nombres
             String expressionXPath = "//Recetario/libro1/recetas/nombre";
             try {
                 //Carga del documento xml
