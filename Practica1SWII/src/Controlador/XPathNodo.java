@@ -69,10 +69,15 @@ public class XPathNodo {
      
         }
         
-        public void XpathNombresRecetas () {
+        public void XpathPrecios () {
             
+<<<<<<< HEAD
             //Mostrar todos los nombres
             String expressionXPath = "//Recetario/libro1/recetas/nombre";
+=======
+            //Mostrar todos los precios
+            String expressionXPath = "//precio";
+>>>>>>> 764515541a1e5f7ae1896a4f73edba1ad9388001
             try {
                 //Carga del documento xml
                 DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -103,11 +108,44 @@ public class XPathNodo {
      
         }
         
+        public void XpathPrecioMenor15 () {
+            
+            //Mostrar todas las recetas cuyo precio es menor que 15
+            String expressionXPath = "/Recetario/receta[precio < 15.0]";
+            try {
+                //Carga del documento xml
+                DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+                DocumentBuilder builder = factory.newDocumentBuilder();
+                Document doc = builder.parse(xmlFile);
+                
+                // Preparación de xpath
+                XPath xpath = XPathFactory.newInstance().newXPath();
+                
+                //Consultas
+                NodeList nodos = (NodeList) xpath.evaluate(expressionXPath, doc, XPathConstants.NODESET);
+                
+                
+                //Imprime solo categoria de recetas resultantes
+                for (int i=0;i<nodos.getLength();i++){
+                    System.out.println(nodos.item(i).getNodeName()+" : " +
+                        nodos.item(i).getAttributes().getNamedItem("nombre"));
+                }
+            } catch (ParserConfigurationException ex) {
+            Logger.getLogger(XPathNodo.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SAXException ex) {
+            Logger.getLogger(XPathNodo.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+            Logger.getLogger(XPathNodo.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (XPathExpressionException ex) {
+            Logger.getLogger(XPathNodo.class.getName()).log(Level.SEVERE, null, ex);
+            }
+     
+        }
         
         public void XpathMixto () {
             
             //Mostrar las recetas con dificultad menor que medio y precio mayor que 10
-            String expressionXPath = "/Recetario/libro1/recetas[ dificultad < 2 and precio > 10]";
+            String expressionXPath = "/Recetario/receta[ dificultad < 2 and precio > 10]";
             try {
                 //Carga del documento xml
                 DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
