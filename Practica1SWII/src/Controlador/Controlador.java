@@ -18,6 +18,19 @@ public class Controlador {
     Modelo modelo = new Modelo();
     CreadorObjetos co= new CreadorObjetos();
     XQuery XQ= new XQuery();
+    XPathNodo XPN = new XPathNodo();
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone(); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Controlador(Receta receta) {
+        this.receta = receta;
+    }
+
+    public Controlador() {
+    }
      ArrayList<Receta> recetaArrayList = new ArrayList();
      
           Receta receta;
@@ -49,7 +62,7 @@ public class Controlador {
         while(opcion != salir){
             System.out.println("Elige una opcion, pulsa 0 para salir");
             System.out.println("1= Importar recetario, 2=Exportar recetario, 3=Exportar Receta, 4=Importar Receta, 5= crea el recetario, 6=crea recetas, 7=Lista recetas en caliente , 8=listar las recetas del recetario");
-            System.out.println("9=Xpath *, 10=Xpath muestra recetas cuyo precio <15 11=XPath que muestra las recetas con dificultad Facil y que el precio sea menor a 15 euros");
+            System.out.println("9=Xpath del nodo Recetario, 10=Xpath muestra recetas cuyo precio <15 11=XPath que muestra las recetas con dificultad Facil y que el precio sea menor a 15 euros");
             System.out.println("12=Xquery que dice cuales son las recetas viables para novatos, 13=Xquery que te lista la receta, 13=XQuery que busca las recetas cuyo valor es superior a 2 euros");
             System.out.println("15= crea un HTML a partir del xml donde lista las recetas,16=Validar DTD, 17=Validar XSD");
             opcion = Integer.parseInt(scanner.nextLine());
@@ -116,7 +129,7 @@ public class Controlador {
                    
                     break;
                 case 9:
-                   
+                   XPN.XpathRecetario();
                   
                     break;
                 case 10:
@@ -127,34 +140,31 @@ public class Controlador {
                   
                    
                     break;
-                        case 12:
-                  
-                   
-                    break;
-                case 13:
+                       
+                case 12:
                     
                      XQ.buscarRecetasNovatos();
                    
                   
                     break;
-                case 14:
+                case 13:
                      XQ.listarRecetas();
                   
                     break;
-                case 15:
+                case 14:
                     XQ.verRecetasConPrecioMayorA2euros();
                     
                     break;
-                case 16:
+                case 15:
                      modelo.crearHTML(XQ.creadorDeHTML());
                     
                     break;
-                 case 17:
+                 case 16:
                     // Validacion DTD de la agenda
                     System.out.println("¿Es valido el xml con su dtd? "+  vDTD.validarXML( "./files/xml/recetarioDTD.xml"));
                    
                     break;
-                  case 18:
+                  case 17:
                        // Listar recetas en agenda
                       System.out.println("Introduce el nombre del XML a validar sin extension: ");
                      respuesta = scanner.nextLine();

@@ -2,7 +2,7 @@
 <Recetario>
     <nombre>libro1</nombre>
     <recetas>
-        <recetas>
+        <receta>
             <nombre>Canelones</nombre>
             <ingredienete>
                 <ingredienete>Pasta</ingredienete>
@@ -11,8 +11,8 @@
                 <ingredienete>tomate frito</ingredienete>
             </ingredienete>
             <precio>15.56</precio>
-        </recetas>
-        <recetas>
+        </receta>
+        <receta>
             <nombre>Ensaladilla rusa</nombre>
             <ingredienete>
                 <ingredienete>Patatas</ingredienete>
@@ -21,8 +21,8 @@
                 <ingredienete>Mayonesa</ingredienete>
             </ingredienete>
             <precio>12.56</precio>
-        </recetas>
-        <recetas>
+        </receta>
+        <receta>
             <nombre>pan</nombre>
             <ingredienete>
                 <ingredienete>trigo</ingredienete>
@@ -30,7 +30,7 @@
                 <ingredienete>0</ingredienete>
             </ingredienete>
             <precio>0.55</precio>
-        </recetas>
+        </receta>
     </recetas>
     <precio>100.0</precio>
 </Recetario>
