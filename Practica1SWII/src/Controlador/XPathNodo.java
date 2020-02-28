@@ -31,60 +31,12 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-
-/**
- *
- * @author darth
- */
-
-
 public class XPathNodo {
-    
-    File xmlFile = new File("./files/xml/Recetario.xml");
-    
-   
-        public void XpathRecetas () {
-            
-            //Mostrar todos las recetas
-            String expressionXPath = "///recetas";
-            try {
-                //Carga del documento xml
-                DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-                DocumentBuilder builder = factory.newDocumentBuilder();
-                Document doc = builder.parse(xmlFile);
-                
-                // Preparación de xpath
-                XPath xpath = XPathFactory.newInstance().newXPath();
-                
-                //Consultas
-                NodeList nodos = (NodeList) xpath.evaluate(expressionXPath, doc, XPathConstants.NODESET);
-                
-                
-                //Imprime solo categoria de recetas resultantes
-                for (int i=0;i<nodos.getLength();i++){
-                    System.out.println(nodos.item(i).getNodeName()+" : " +
-                        nodos.item(i).getAttributes().getNamedItem("nombre"));
-                }
-            } catch (ParserConfigurationException ex) {
-            Logger.getLogger(XPathNodo.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (SAXException ex) {
-            Logger.getLogger(XPathNodo.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (IOException ex) {
-            Logger.getLogger(XPathNodo.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (XPathExpressionException ex) {
-            Logger.getLogger(XPathNodo.class.getName()).log(Level.SEVERE, null, ex);
-            }
-     
-        }
-        
-        public void XpathPrecios () {
-            
 
-            //Mostrar todos los nombres
-            String expressionXPath = "//ingredienete";
-
-          try {
-
+    public void XpathRecetario(String fichero) {
+        File xmlFile = new File("./files/xml/" + fichero + ".xml");
+        String expressionXPath = "//Recetario";
+        try {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
             Document doc = builder.parse(xmlFile);
@@ -92,92 +44,23 @@ public class XPathNodo {
             XPath xpath = XPathFactory.newInstance().newXPath();
 
             NodeList nodos = (NodeList) xpath.evaluate(expressionXPath, doc, XPathConstants.NODESET);
-            //Imprime solo categoria de libros resultado
             for (int i = 0; i < nodos.getLength(); i++) {
-                System.out.println(
-                         mostrarNodo(nodos.item(i)));
+                System.out.println(nodos.item(i).getNodeName() + " : "
+                        + mostrarNodo(nodos.item(i)));
+            }
+        } catch (ParserConfigurationException ex) {
+            Logger.getLogger(XPathNodo.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SAXException ex) {
+            Logger.getLogger(XPathNodo.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(XPathNodo.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (XPathExpressionException ex) {
+            Logger.getLogger(XPathNodo.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
-            }
-            } catch (ParserConfigurationException ex) {
-            Logger.getLogger(XPathNodo.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (SAXException ex) {
-            Logger.getLogger(XPathNodo.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (IOException ex) {
-            Logger.getLogger(XPathNodo.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (XPathExpressionException ex) {
-            Logger.getLogger(XPathNodo.class.getName()).log(Level.SEVERE, null, ex);
-            }
-     
-        }
-        
-        public void XpathPrecioMenor15 () {
-            
-            //Mostrar todas las recetas cuyo precio es menor que 15
-            String expressionXPath = "/Recetario/receta[precio < 15.0]";
-            try {
-                //Carga del documento xml
-                DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-                DocumentBuilder builder = factory.newDocumentBuilder();
-                Document doc = builder.parse(xmlFile);
-                
-                // Preparación de xpath
-                XPath xpath = XPathFactory.newInstance().newXPath();
-                
-                //Consultas
-                NodeList nodos = (NodeList) xpath.evaluate(expressionXPath, doc, XPathConstants.NODESET);
-                
-                
-                //Imprime solo categoria de recetas resultantes
-                for (int i=0;i<nodos.getLength();i++){
-                    System.out.println(nodos.item(i).getNodeName()+" : " +
-                        nodos.item(i).getAttributes().getNamedItem("nombre"));
-                }
-            } catch (ParserConfigurationException ex) {
-            Logger.getLogger(XPathNodo.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (SAXException ex) {
-            Logger.getLogger(XPathNodo.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (IOException ex) {
-            Logger.getLogger(XPathNodo.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (XPathExpressionException ex) {
-            Logger.getLogger(XPathNodo.class.getName()).log(Level.SEVERE, null, ex);
-            }
-     
-        }
-        
-        public void XpathMixto () {
-            
-            //Mostrar las recetas con dificultad menor que medio y precio mayor que 10
-            String expressionXPath = "/Recetario/receta[ dificultad < 2 and precio > 10]";
-            try {
-                //Carga del documento xml
-                DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-                DocumentBuilder builder = factory.newDocumentBuilder();
-                Document doc = builder.parse(xmlFile);
-                
-                // Preparación de xpath
-                XPath xpath = XPathFactory.newInstance().newXPath();
-                
-                //Consultas
-                NodeList nodos = (NodeList) xpath.evaluate(expressionXPath, doc, XPathConstants.NODESET);
-                
-                
-                //Imprime solo categoria de recetas resultantes
-                for (int i=0;i<nodos.getLength();i++){
-                    System.out.println(nodos.item(i).getNodeName()+" : " +
-                        nodos.item(i).getAttributes().getNamedItem("nombre"));
-                }
-            } catch (ParserConfigurationException ex) {
-            Logger.getLogger(XPathNodo.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (SAXException ex) {
-            Logger.getLogger(XPathNodo.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (IOException ex) {
-            Logger.getLogger(XPathNodo.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (XPathExpressionException ex) {
-            Logger.getLogger(XPathNodo.class.getName()).log(Level.SEVERE, null, ex);
-            }
-     
-        }
-        private static String mostrarNodo(Node item) {
+    }
+
+    private static String mostrarNodo(Node item) {
         try {
             Transformer transformer = TransformerFactory.newInstance().newTransformer();
             transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
@@ -193,10 +76,7 @@ public class XPathNodo {
         }
         return "";
     }
-    }
-  	
-		
-                
+}       
  		
 
 		
