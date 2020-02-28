@@ -127,30 +127,34 @@ public class Controlador {
                   
                    
                     break;
-                case 12:
+                        case 12:
+                  
+                   
+                    break;
+                case 13:
                     
                      XQ.buscarRecetasNovatos();
                    
                   
                     break;
-                case 13:
+                case 14:
                      XQ.listarRecetas();
                   
                     break;
-                case 14:
+                case 15:
                     XQ.verRecetasConPrecioMayorA2euros();
                     
                     break;
-                case 15:
+                case 16:
                      modelo.crearHTML(XQ.creadorDeHTML());
                     
                     break;
-                 case 16:
+                 case 17:
                     // Validacion DTD de la agenda
                     System.out.println("¿Es valido el xml con su dtd? "+  vDTD.validarXML( "./files/xml/recetarioDTD.xml"));
                    
                     break;
-                  case 17:
+                  case 18:
                        // Listar recetas en agenda
                       System.out.println("Introduce el nombre del XML a validar sin extension: ");
                      respuesta = scanner.nextLine();
