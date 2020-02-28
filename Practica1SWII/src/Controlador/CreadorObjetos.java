@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Controlador;
 
 import Recetarios.Receta;
@@ -10,10 +6,6 @@ import Recetarios.Recetario;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-/**
- *
- * @author DarVVolf
- */
 public class CreadorObjetos {
     
      protected Receta crearReceta() {
