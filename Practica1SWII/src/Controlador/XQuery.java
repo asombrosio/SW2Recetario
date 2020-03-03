@@ -19,10 +19,6 @@ import javax.xml.xquery.XQException;
 import javax.xml.xquery.XQPreparedExpression;
 import javax.xml.xquery.XQResultSequence;
 
-/**
- *
- * @author DarVVolf
- */
 public class XQuery {
     ArrayList <String> queryResult =new ArrayList();
     

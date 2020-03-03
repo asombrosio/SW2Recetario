@@ -38,7 +38,7 @@ public class XPathNodo {
         public void XpathRecetas () {
             
             //Mostrar todos las recetas
-            String expressionXPath = "//recetas";
+            String expressionXPath = "//recetas/recetas";
             try {
                 //Carga del documento xml
                 DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -71,25 +71,27 @@ public class XPathNodo {
         
         public void XpathPrecios () {
             
-            //Mostrar todos los precios
-            String expressionXPath = "//precio";
+
+            //Mostrar todos los nombres
+            String expressionXPath = "//recetas";
+            
             try {
+                
                 //Carga del documento xml
                 DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
                 DocumentBuilder builder = factory.newDocumentBuilder();
                 Document doc = builder.parse(xmlFile);
-                
                 // Preparación de xpath
                 XPath xpath = XPathFactory.newInstance().newXPath();
                 
                 //Consultas
                 NodeList nodos = (NodeList) xpath.evaluate(expressionXPath, doc, XPathConstants.NODESET);
                 
-                
+                System.out.println(nodos.getLength());
                 //Imprime solo categoria de recetas resultantes
                 for (int i=0;i<nodos.getLength();i++){
                     System.out.println(nodos.item(i).getNodeName()+" : " +
-                        nodos.item(i).getAttributes().getNamedItem("nombre"));
+                        nodos.item(i).getAttributes().getNamedItem("recetas"));
                 }
             } catch (ParserConfigurationException ex) {
             Logger.getLogger(XPathNodo.class.getName()).log(Level.SEVERE, null, ex);
