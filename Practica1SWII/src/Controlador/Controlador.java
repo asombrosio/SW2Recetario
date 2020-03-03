@@ -18,7 +18,11 @@ public class Controlador {
     Modelo modelo = new Modelo();
     CreadorObjetos co= new CreadorObjetos();
     XQuery XQ= new XQuery();
+<<<<<<< HEAD
     XPathNodo XPnodo = new XPathNodo();
+=======
+    XPathNodo XPN = new XPathNodo();
+>>>>>>> fab7bd7979c1590f32f10b8a79108011d952da00
      ArrayList<Receta> recetaArrayList = new ArrayList();
      
           Receta receta;
@@ -117,41 +121,46 @@ public class Controlador {
                    
                     break;
                 case 9:
+<<<<<<< HEAD
                    
                   XPnodo.XpathPrecioMenor15();
+=======
+                    XPN.XpathPrecios();
+
+>>>>>>> fab7bd7979c1590f32f10b8a79108011d952da00
                     break;
                 case 10:
-                  
-                   
+
                     break;
-                    case 11:
-                  
-                   
+                case 11:
+
                     break;
                 case 12:
-                    
-                     XQ.buscarRecetasNovatos();
-                   
-                  
+
                     break;
                 case 13:
+
+                    XQ.buscarRecetasNovatos();
+
+                    break;
+                case 14:
                      XQ.listarRecetas();
                   
                     break;
-                case 14:
+                case 15:
                     XQ.verRecetasConPrecioMayorA2euros();
                     
                     break;
-                case 15:
+                case 16:
                      modelo.crearHTML(XQ.creadorDeHTML());
                     
                     break;
-                 case 16:
+                 case 17:
                     // Validacion DTD de la agenda
                     System.out.println("¿Es valido el xml con su dtd? "+  vDTD.validarXML( "./files/xml/recetarioDTD.xml"));
                    
                     break;
-                  case 17:
+                  case 18:
                        // Listar recetas en agenda
                       System.out.println("Introduce el nombre del XML a validar sin extension: ");
                      respuesta = scanner.nextLine();
