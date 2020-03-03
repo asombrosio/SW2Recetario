@@ -118,7 +118,7 @@ public class Controlador {
                     break;
                 case 9:
                    
-                  XPnodo.XpathPrecioMenor15();
+                  XPnodo.XpathRecetas();
                     break;
                 case 10:
                   
