@@ -40,11 +40,11 @@ import org.xml.sax.SAXException;
 
 public class XPathNodo {
     
-    File xmlFile = new File("./files/xml/recetario1.xml");
-    
+  
 
-        public void XpathRecetas () {
-            
+        public void XpathRecetas (String fichero) {
+              File xmlFile = new File("./files/xml/"+fichero+".xml");
+    
 
             //Mostrar todos los nombres
             String expressionXPath = "//Recetario";
@@ -66,18 +66,18 @@ public class XPathNodo {
 
 
 
-        } catch (SAXException ex) {
-          //  Logger.getLogger(NodeLauncher.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-           // Logger.getLogger(NodeLauncher.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (XPathExpressionException ex) {
-          //  Logger.getLogger(NodeLauncher.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ParserConfigurationException ex) {
-           // Logger.getLogger(NodeLauncher.class.getName()).log(Level.SEVERE, null, ex);
-        }
+  
 
-        }
-        
+        }   catch (ParserConfigurationException ex) {
+                Logger.getLogger(XPathNodo.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SAXException ex) {
+                Logger.getLogger(XPathNodo.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(XPathNodo.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (XPathExpressionException ex) {
+                Logger.getLogger(XPathNodo.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }      
         private static String mostrarNodo(Node item) {
         try {
             Transformer transformer = TransformerFactory.newInstance().newTransformer();
@@ -88,9 +88,9 @@ public class XPathNodo {
             transformer.transform(new DOMSource(item), sR);
             return sw.toString();
         } catch (TransformerConfigurationException ex) {
-           // Logger.getLogger(NodeLauncher.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(XPathNodo.class.getName()).log(Level.SEVERE, null, ex);
         } catch (TransformerException ex) {
-            //Logger.getLogger(NodeLauncher.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(XPathNodo.class.getName()).log(Level.SEVERE, null, ex);
         }
         return "";
     }

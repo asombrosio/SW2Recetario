@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Receta dificultad="Dificil">
+    <nombre>Lasanna</nombre>
+    <ingrediente>
+        <ingrediente>Tomate</ingrediente>
+        <ingrediente>Carne</ingrediente>
+        <ingrediente>Pasta</ingrediente>
+        <ingrediente>Queso</ingrediente>
+        <ingrediente>Aceite</ingrediente>
+        <ingrediente>Sal</ingrediente>
+        <ingrediente>Bechamel</ingrediente>
+    </ingrediente>
+    <precio>12.0</precio>
+</Receta>
