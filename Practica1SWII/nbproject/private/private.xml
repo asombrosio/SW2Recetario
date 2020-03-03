@@ -3,13 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/david/Documents/GitHub/SW2Recetario/Practica1SWII/src/Controlador/Controlador.java</file>
-            <file>file:/C:/Users/david/Documents/GitHub/SW2Recetario/Practica1SWII/src/Controlador/ValidarXSD.java</file>
-            <file>file:/C:/Users/david/Documents/GitHub/SW2Recetario/Practica1SWII/src/Controlador/Marsalling.java</file>
-            <file>file:/C:/Users/david/Documents/GitHub/SW2Recetario/Practica1SWII/src/Controlador/Modelo.java</file>
-            <file>file:/C:/Users/david/Documents/GitHub/SW2Recetario/Practica1SWII/src/Controlador/ValidarDTD.java</file>
-            <file>file:/C:/Users/david/Documents/GitHub/SW2Recetario/Practica1SWII/src/Controlador/CustomErrorHandler.java</file>
-            <file>file:/C:/Users/david/Documents/GitHub/SW2Recetario/Practica1SWII/src/principal/Main.java</file>
+            <file>file:/C:/Users/USUARIO/Documents/GitHub/SW2Recetario/Practica1SWII/src/Controlador/XPathSimple.java</file>
+            <file>file:/C:/Users/USUARIO/Documents/GitHub/SW2Recetario/Practica1SWII/src/Controlador/XPathNodo.java</file>
+            <file>file:/C:/Users/USUARIO/Documents/GitHub/SW2Recetario/Practica1SWII/src/Controlador/Controlador.java</file>
+            <file>file:/C:/Users/USUARIO/Documents/GitHub/SW2Recetario/Practica1SWII/src/Recetarios/Receta.java</file>
         </group>
     </open-files>
 </project-private>

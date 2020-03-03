@@ -18,7 +18,7 @@ public class Controlador {
     Modelo modelo = new Modelo();
     CreadorObjetos co= new CreadorObjetos();
     XQuery XQ= new XQuery();
-    XPathNodo XPN = new XPathNodo();
+    XPathNodo XPnodo = new XPathNodo();
      ArrayList<Receta> recetaArrayList = new ArrayList();
      
           Receta receta;
@@ -117,41 +117,41 @@ public class Controlador {
                    
                     break;
                 case 9:
-                    XPN.XpathPrecios();
-
+                   
+                  XPnodo.XpathPrecioMenor15();
                     break;
                 case 10:
-
+                  
+                   
                     break;
-                case 11:
-
+                    case 11:
+                  
+                   
                     break;
                 case 12:
-
+                    
+                     XQ.buscarRecetasNovatos();
+                   
+                  
                     break;
                 case 13:
-
-                    XQ.buscarRecetasNovatos();
-
-                    break;
-                case 14:
                      XQ.listarRecetas();
                   
                     break;
-                case 15:
+                case 14:
                     XQ.verRecetasConPrecioMayorA2euros();
                     
                     break;
-                case 16:
+                case 15:
                      modelo.crearHTML(XQ.creadorDeHTML());
                     
                     break;
-                 case 17:
+                 case 16:
                     // Validacion DTD de la agenda
                     System.out.println("¿Es valido el xml con su dtd? "+  vDTD.validarXML( "./files/xml/recetarioDTD.xml"));
                    
                     break;
-                  case 18:
+                  case 17:
                        // Listar recetas en agenda
                       System.out.println("Introduce el nombre del XML a validar sin extension: ");
                      respuesta = scanner.nextLine();
