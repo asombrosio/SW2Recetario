@@ -27,10 +27,10 @@ public class XPathSimple {
     
     public void XpathSimpleNumeroRecetas () {
         
-        File xmlFile = new File("./files/xml/Recetario.xml");
+        File xmlFile = new File("./files/xml/recetario1.xml");
         
         //Número de recetas en total
-        String expressionXPath = "count(//receta)";
+        String expressionXPath = "count(//recetario)";
         
         try {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
