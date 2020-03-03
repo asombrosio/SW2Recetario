@@ -21,7 +21,7 @@ public class XPathSimple {
         
         File xmlFile = new File("./files/xml/"+fichero+".xml");
         
-        String expressionXPath = "count(//receta)";
+        String expressionXPath = "count(//Recetario/recetas/recetas)";
         
         try {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -47,7 +47,7 @@ public class XPathSimple {
         
         File xmlFile = new File("./files/xml/"+fichero+".xml");
         
-        String expressionXPath = "count(//receta[precio < 15.0])";
+        String expressionXPath = "count(//Recetario/recetas/recetas[precio < 15.0])";
         
         try {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();

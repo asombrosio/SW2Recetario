@@ -18,6 +18,7 @@ public class Controlador {
     Modelo modelo = new Modelo();
     CreadorObjetos co= new CreadorObjetos();
     XQuery XQ= new XQuery();
+    XPathSimple XPS= new XPathSimple();
     XPathNodo XPnodo = new XPathNodo();
      ArrayList<Receta> recetaArrayList = new ArrayList();
      
@@ -122,10 +123,10 @@ public class Controlador {
                     break;
                 case 10:
                   
-                   
+                   XPS.XpathSimpleNumeroRecetas("recetario1");
                     break;
                     case 11:
-                  
+                  XPS.XpathSimpleTotalRecetasPrecioMenor("recetario1");
                    
                     break;
                 case 12:
