@@ -71,7 +71,7 @@ public class Controlador {
                      //Exportar recetario
                     System.out.println("Introduce el nombre del fichero sin la extensión del recetario");
                      respuesta = scanner.nextLine();
-                     if(respuesta.equals("recetarioDTD")!= true){
+                     if((respuesta.equals("recetarioDTD")!= true)|| (respuesta.equals("recetario1")!= true)){
                       crearXMLRecetario(respuesta+ ".xml",recetario);
                      }else{
                          System.out.println("Ese nombre esta prohibido");
