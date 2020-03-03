@@ -16,7 +16,7 @@ import org.xml.sax.SAXException;
 
 /**
  *
- * @author david
+ * @author darth
  */
 public class ValidarDTD {
     
@@ -28,6 +28,7 @@ public class ValidarDTD {
             DocumentBuilderFactory dBF = DocumentBuilderFactory.newInstance();
             dBF.setValidating(true);
             DocumentBuilder builder = dBF.newDocumentBuilder();
+            //In this case we are creating a different ErrorHandler, if not we do like the well-formed Checker+
             CustomErrorHandler customErrorHandler = new CustomErrorHandler();
 
             builder.setErrorHandler(customErrorHandler);

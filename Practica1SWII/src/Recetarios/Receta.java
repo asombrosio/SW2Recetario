@@ -34,27 +34,48 @@ public class Receta implements Serializable {
     
     public Receta (){}
 
+
+   
+
+
+    /**
+     * @return the nombre
+     */
     public String getNombre() {
         return nombre;
     }
-    
+
+    /**
+     * @param nombre the nombre to set
+     */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
+    /**
+     * @return the ingrediente
+     */
     public ArrayList<String> getIngrediente() {
         return ingrediente;
     }
 
-  
+    /**
+     * @param ingrediente the ingrediente to set
+     */
     public void setIngrediente(ArrayList<String> ingrediente) {
         this.ingrediente = ingrediente;
     }
 
+    /**
+     * @return the precio
+     */
     public Double getPrecio() {
         return precio;
     }
 
+    /**
+     * @param precio the precio to set
+     */
     public void setPrecio(Double precio) {
         this.precio = precio;
     }
