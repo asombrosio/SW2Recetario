@@ -52,7 +52,7 @@ public class Modelo {
     protected Receta buscarReceta(String nombreReceta, Recetario recetario) {
        
         for (Receta ele : recetario.getRecetas()) {
-              System.out.println("paso"+ ele.getNombre());
+             
             if (ele.getNombre().equals(nombreReceta)) {
                 return ele;
             }
@@ -65,7 +65,7 @@ public class Modelo {
         PrintWriter pw = null;
         int valor=0;
         try {
-            fichero = new FileWriter("./files/html/prueba.html");
+            fichero = new FileWriter("./files/html/recetarioHTML.html");
             pw = new PrintWriter(fichero);
 
             for (String ele : array) {

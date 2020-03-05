@@ -18,8 +18,8 @@ public class Controlador {
     Modelo modelo = new Modelo();
     CreadorObjetos co= new CreadorObjetos();
     XQuery XQ= new XQuery();
+    XPathSimple XPS= new XPathSimple();
     XPathNodo XPnodo = new XPathNodo();
-    XPathSimple XPS = new XPathSimple();
      ArrayList<Receta> recetaArrayList = new ArrayList();
      
           Receta receta;
@@ -51,8 +51,8 @@ public class Controlador {
         while(opcion != salir){
             System.out.println("Elige una opcion, pulsa 0 para salir");
             System.out.println("1= Importar recetario, 2=Exportar recetario, 3=Exportar Receta, 4=Importar Receta, 5= crea el recetario, 6=crea recetas, 7=Lista recetas en caliente , 8=listar las recetas del recetario");
-            System.out.println("9=Xpath *, 10=Xpath muestra recetas cuyo precio <15 11=XPath que muestra las recetas con dificultad Facil y que el precio sea menor a 15 euros");
-            System.out.println("12=Xquery que dice cuales son las recetas viables para novatos, 13=Xquery que te lista la receta, 13=XQuery que busca las recetas cuyo valor es superior a 2 euros");
+            System.out.println("9=XpathNode te muestra en forma de nodo el xml, 10=Xpath muestra el numero de recetas 11=XPath que muestra recetas cuyo precio <15");
+            System.out.println("12=Xquery que dice cuales son las recetas viables para novatos, 13=Xquery que te lista la receta, 14=XQuery que busca las recetas cuyo valor es superior a 2 euros");
             System.out.println("15= crea un HTML a partir del xml donde lista las recetas,16=Validar DTD, 17=Validar XSD");
             opcion = Integer.parseInt(scanner.nextLine());
             switch(opcion){
@@ -71,7 +71,7 @@ public class Controlador {
                      //Exportar recetario
                     System.out.println("Introduce el nombre del fichero sin la extensión del recetario");
                      respuesta = scanner.nextLine();
-                     if(respuesta.equals("recetarioDTD")!= true){
+                     if((respuesta.equals("recetarioDTD")!= true)|| (respuesta.equals("recetario1")!= true)){
                       crearXMLRecetario(respuesta+ ".xml",recetario);
                      }else{
                          System.out.println("Ese nombre esta prohibido");
@@ -118,15 +118,19 @@ public class Controlador {
                    
                     break;
                 case 9:
-                   
-                  XPnodo.XpathPrecioMenor15();
+                         System.out.println("Introduce el nombre del fichero sin la extensión");
+                    respuesta = scanner.nextLine();
+                  XPnodo.XpathRecetas(respuesta);
                     break;
                 case 10:
-                  XPS.XpathSimpleNumeroRecetas();
-                   
+                   System.out.println("Introduce el nombre del fichero sin la extensión");
+                    respuesta = scanner.nextLine();
+                   XPS.XpathSimpleNumeroRecetas(respuesta);
                     break;
                     case 11:
-                  
+                          System.out.println("Introduce el nombre del fichero sin la extensión");
+                    respuesta = scanner.nextLine();
+                  XPS.XpathSimpleTotalRecetasPrecioMenor(respuesta);
                    
                     break;
                 case 12:

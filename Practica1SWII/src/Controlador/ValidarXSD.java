@@ -33,10 +33,10 @@ public class ValidarXSD {
             validator.validate(new StreamSource(new File(xmlPath)));
 
         } catch (SAXException ex) {
-            System.err.println("No es valido");
+            Logger.getLogger(ValidarXSD.class.getName()).log(Level.SEVERE, null, ex);
             return false;
         } catch (IOException ex) {
-          System.err.println("No esta ese fichero");
+            Logger.getLogger(ValidarXSD.class.getName()).log(Level.SEVERE, null, ex);
             return false;
         }
         return true;

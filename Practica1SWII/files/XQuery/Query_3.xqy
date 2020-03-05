@@ -6,7 +6,7 @@
 <ul>
 {
 for $x in 
-doc("./files/xml/prueba.xml")/Recetario/recetas/recetas
+doc("./files/xml/recetario1.xml")/Recetario/recetas/recetas
 order by $x/nombre
 return <li class="{data($x/@dificultad)}">{data($x/nombre)}</li>
 }
