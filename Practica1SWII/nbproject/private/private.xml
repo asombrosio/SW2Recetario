@@ -2,6 +2,7 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< HEAD
         <group>
             <file>file:/C:/Users/david/Documents/GitHub/SW2Recetario/Practica1SWII/src/Controlador/Controlador.java</file>
             <file>file:/C:/Users/david/Documents/GitHub/SW2Recetario/Practica1SWII/src/Controlador/Marsalling.java</file>
@@ -10,5 +11,8 @@
             <file>file:/C:/Users/david/Documents/GitHub/SW2Recetario/Practica1SWII/src/Controlador/XPathSimple.java</file>
             <file>file:/C:/Users/david/Documents/GitHub/SW2Recetario/Practica1SWII/src/Controlador/XPathNodo.java</file>
         </group>
+=======
+        <group/>
+>>>>>>> 16511b55cc97f15852790a16b399b2e936695ce2
     </open-files>
 </project-private>
